@@ -35,6 +35,7 @@
   const worklogColumns = $derived([
     { key: 'created_at', label: t('time.entry.submitted'), render: (w) => formatDateSimple(new Date(w.created_at * 1000)) },
     { key: 'project_name', label: t('time.reports.project'), slot: 'project' },
+    { key: 'user_name', label: t('common.username') },
     { key: 'item_title', label: t('items.workItem'), slot: 'item' },
     { key: 'description', label: t('common.description') },
     { key: 'time', label: t('common.time'), slot: 'details' },

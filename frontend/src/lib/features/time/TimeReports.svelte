@@ -126,6 +126,7 @@
     { key: 'date', label: t('common.date'), render: (w) => formatDateOnly(dateKeyInZone(w.start_time, reportTimezone)) },
     { key: 'customer_name', label: t('time.reports.customer') },
     { key: 'project_name', label: t('time.reports.project'), slot: 'project' },
+    { key: 'user_name', label: t('common.username') },
     { key: 'description', label: t('common.description') },
     { key: 'time', label: t('common.time'), slot: 'time' },
     { key: 'duration_minutes', label: t('time.duration'), slot: 'duration' }
@@ -299,7 +300,7 @@
 
   async function exportPersonalCSV() {
     const allEntries = await fetchAllPersonalEntries();
-    const headers = ['Date', 'Customer', 'Project', 'Description', 'Start Time', 'End Time', 'Duration (hours)'];
+    const headers = ['Date', 'Customer', 'Project', 'Username', 'Description', 'Start Time', 'End Time', 'Duration (hours)'];
     /** @type {(string | number)[][]} */
     const csvData = [headers];
 
@@ -308,6 +309,7 @@
         dateKeyInZone(worklog.start_time, reportTimezone),
         worklog.customer_name,
         worklog.project_name,
+        worklog.user_name || 'Unknown',
         worklog.description,
         formatTime(worklog.start_time),
         formatTime(worklog.end_time),
@@ -317,13 +319,13 @@
 
     csvData.push([]);
     csvData.push(['Summary']);
-    csvData.push(['Total Hours', '', '', '', '', '', summary.totalHours]);
-    csvData.push(['Total Entries', '', '', '', '', '', summary.totalEntries]);
+    csvData.push(['Total Hours', '', '', '', '', '', '', summary.totalHours]);
+    csvData.push(['Total Entries', '', '', '', '', '', '', summary.totalEntries]);
     if (summary.topProject) {
-      csvData.push(['Top Project', '', summary.topProject.name, '', '', '', summary.topProject.hours]);
+      csvData.push(['Top Project', '', summary.topProject.name, '', '', '', '', summary.topProject.hours]);
     }
     if (summary.topCustomer) {
-      csvData.push(['Top Customer', summary.topCustomer.name, '', '', '', '', summary.topCustomer.hours]);
+      csvData.push(['Top Customer', summary.topCustomer.name, '', '', '', '', '', summary.topCustomer.hours]);
     }
 
     downloadCSV(csvData, `time-report-${filters.date_from}-to-${filters.date_to}.csv`);
@@ -413,6 +415,7 @@
         heading: `${formatDateOnly(dateKeyInZone(worklog.start_time, reportTimezone))} — ${worklog.project_name}`,
         fields: [
           { label: 'Customer', value: worklog.customer_name },
+          { label: 'Username', value: worklog.user_name || 'Unknown' },
           { label: 'Duration', value: formatDuration(worklog.duration_minutes) },
           { label: 'Description', value: worklog.description },
           { label: 'Time', value: `${formatTime(worklog.start_time)} – ${formatTime(worklog.end_time)}` },

@@ -1,0 +1,21 @@
+# Normalize all text files to LF on checkout, regardless of platform or
+# local core.autocrlf. Windows checkouts previously converted committed LF
+# files (e.g. internal/database/schema/*.sql, go:embed'd into the binary) to
+# CRLF, which changes their byte content and breaks the migration checksum
+# check against databases migrated by a Linux-built binary.
+* text=auto eol=lf
+
+# Explicit binary types: never touch line endings or attempt text diffs.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.pdf binary
+*.zip binary
+*.exe binary
+*.db binary
