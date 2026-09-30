@@ -756,7 +756,7 @@ func (w *WebhookSender) sendWebhookPayload(parentCtx context.Context, webhook We
 		return fmt.Errorf("create webhook request: %w", err)
 	}
 
-	// Apply custom headers FIRST so reserved Windshift headers (Content-Type,
+	// Apply custom headers FIRST so reserved Spark headers (Content-Type,
 	// X-Webhook-*) overwrite any collision below. Previously the order was
 	// reversed and a channel manager could supply an X-Webhook-Signature
 	// custom header that overrode the computed HMAC.
@@ -764,7 +764,7 @@ func (w *WebhookSender) sendWebhookPayload(parentCtx context.Context, webhook We
 		req.Header.Set(key, value)
 	}
 
-	// Reserved Windshift headers take precedence over custom headers.
+	// Reserved Spark headers take precedence over custom headers.
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("X-Webhook-Event", event)
 	req.Header.Set("X-Webhook-ID", fmt.Sprintf("%d", webhook.ChannelID))
@@ -916,7 +916,7 @@ func (w *WebhookSender) SendTestWebhook(ctx context.Context, config *models.Chan
 	testPayload := map[string]any{
 		"event":     "test",
 		"timestamp": time.Now().UTC(),
-		"message":   "This is a test webhook from Windshift",
+		"message":   "This is a test webhook from Spark",
 		"item": map[string]any{
 			"id":    0,
 			"title": "Test Item",
@@ -939,7 +939,7 @@ func (w *WebhookSender) SendTestWebhook(ctx context.Context, config *models.Chan
 		return false, fmt.Sprintf("Failed to create request: %v", err)
 	}
 
-	// Apply custom headers FIRST so reserved Windshift headers overwrite any
+	// Apply custom headers FIRST so reserved Spark headers overwrite any
 	// collision (especially X-Webhook-Signature). See sendWebhook for rationale.
 	for key, value := range config.WebhookHeaders {
 		req.Header.Set(key, value)

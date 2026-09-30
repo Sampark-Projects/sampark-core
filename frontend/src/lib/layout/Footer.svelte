@@ -36,9 +36,6 @@
         >
           {t('footer.licenses')}
         </button>
-        <a href="https://github.com/Windshiftapp/core/issues" target="_blank" rel="noopener noreferrer" class="text-[var(--ds-text-link)] hover:text-[var(--ds-text-link-hovered)] transition-colors">
-          {t('footer.reportProblem')}
-        </a>
       </div>
     </div>
   </div>

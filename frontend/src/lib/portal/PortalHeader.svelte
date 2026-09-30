@@ -57,7 +57,7 @@
     }
     if ($portalAuthStore.isAuthenticated && $portalAuthStore.user) {
       return {
-        name: $portalAuthStore.user.name || 'Windshift user',
+        name: $portalAuthStore.user.name || 'Spark user',
         email: $portalAuthStore.user.email,
         avatar: internalAvatar,
         canManageProfile: false,

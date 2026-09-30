@@ -73,7 +73,7 @@ export default {
       },
       "integrationProviders": {
         "title": "عمليات التكامل",
-        "description": "إدارة عمليات التكامل الصادرة يتصل Windshift بالتطبيقات الواردة والتطبيقات الواردة التي تسمح عبر OAuth."
+        "description": "إدارة عمليات التكامل الصادرة يتصل Spark بالتطبيقات الواردة والتطبيقات الواردة التي تسمح عبر OAuth."
       },
       "diagnostics": {
         "description": "صحة النظام: ساعة الخادم، وفشل الإجراءات، وإشارات التشغيل الأخرى"
@@ -86,7 +86,7 @@ export default {
       "importSuccess": "تم استيراد مجموعة التكوين بنجاح"
     },
     "emailTemplates": {
-      "subtitle": "قم بتخصيص موضوع ونص رسائل البريد الإلكتروني الخاصة بالمعاملات المرسلة بواسطة Windshift.",
+      "subtitle": "قم بتخصيص موضوع ونص رسائل البريد الإلكتروني الخاصة بالمعاملات المرسلة بواسطة Spark.",
       "empty": "لم يتم العثور على قوالب البريد الإلكتروني.",
       "adminNotes": "الوصف (ملاحظات المشرف)",
       "activeHint": "نشط (قم بإلغاء تحديده للرجوع إلى الإعداد الافتراضي المضمن)",
@@ -195,7 +195,7 @@ export default {
     "qlQueryRequired": "استعلام QL مطلوب",
     "qlQueryTokenRequired": "يجب أن تشير استعلامات QL في وضع النموذج إلى حقل نموذج واحد على الأقل باستخدام الرموز المميزة ${field_identifier}",
     "qlQueryPlaceholder": "status = \"Active\" AND category = \"Hardware\"",
-    "qlQueryHint": "تصفية الأصول باستخدام QL (Windshift لغة الاستعلام).",
+    "qlQueryHint": "تصفية الأصول باستخدام QL (Spark لغة الاستعلام).",
     "qlQueryFormPlaceholder": "title = ${title} AND status = ${status}",
     "qlQueryFormHint": "استخدم الرموز المميزة ${field_identifier} للإشارة إلى القيم المرسلة بواسطة النموذج.",
     "runMode": "وضع التشغيل",

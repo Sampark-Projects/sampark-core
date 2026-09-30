@@ -382,10 +382,10 @@ export default {
     workspace: 'Workspace',
   },
   about: {
-    title: 'Sobre o Windshift',
+    title: 'Sobre o Spark',
     subtitle: 'Uma plataforma abrangente de gerenciamento de trabalho projetada para equipes modernas',
-    whatIs: 'O que é o Windshift?',
-    description: 'O Windshift é uma poderosa aplicação de gerenciamento de trabalho que reúne acompanhamento de projetos, gerenciamento de testes, controle de tempo e colaboração em equipe em uma plataforma unificada. Desenvolvido com tecnologias modernas e projetado para flexibilidade, ele se adapta ao fluxo de trabalho exclusivo da sua equipe.',
+    whatIs: 'O que é o Spark?',
+    description: 'O Spark é uma poderosa aplicação de gerenciamento de trabalho que reúne acompanhamento de projetos, gerenciamento de testes, controle de tempo e colaboração em equipe em uma plataforma unificada. Desenvolvido com tecnologias modernas e projetado para flexibilidade, ele se adapta ao fluxo de trabalho exclusivo da sua equipe.',
     keyFeatures: 'Principais Funcionalidades',
     projectManagement: 'Gerenciamento de Projetos',
     projectManagementDesc: 'Organize itens de trabalho hierarquicamente com campos personalizados, workflows e acompanhamento de status.',
@@ -409,7 +409,7 @@ export default {
     getStarted: 'Começar',
   },
   onboarding: {
-    welcomeTo: 'Bem-vindo ao Windshift',
+    welcomeTo: 'Bem-vindo ao Spark',
     getStartedMessage: 'Vamos começar criando seu primeiro workspace e item de trabalho',
     progress: 'Progresso',
     completed: 'concluído',

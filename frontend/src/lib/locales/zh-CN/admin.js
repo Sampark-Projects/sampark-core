@@ -463,7 +463,7 @@ export default {
       autoProvisionUsersDesc: '首次 SSO 登录时自动创建用户账户',
       manualUserCreationOnly: '仅手动创建用户',
       trustIdpEmailVerification: '在 IdP 未验证邮箱的情况下关联账户',
-      trustIdpEmailVerificationDesc: '启用后，即使提供商未验证邮箱地址，其身份也会通过邮箱与现有 Windshift 账户关联。禁用后，账户关联需要提供商验证过的邮箱。',
+      trustIdpEmailVerificationDesc: '启用后，即使提供商未验证邮箱地址，其身份也会通过邮箱与现有 Spark 账户关联。禁用后，账户关联需要提供商验证过的邮箱。',
       idpVerificationNotEnforced: '关联账户需要已验证的邮箱',
       unsafeProvisioningWarningTitle: '已启用未验证邮箱关联',
       unsafeProvisioningWarningBody:
@@ -517,7 +517,7 @@ export default {
     },
     emailTemplates: {
       title: 'Email Templates',
-      subtitle: 'Customize the subject and body of transactional emails sent by Windshift.',
+      subtitle: 'Customize the subject and body of transactional emails sent by Spark.',
       loading: 'Loading…',
       empty: 'No email templates found.',
       template: 'Template',

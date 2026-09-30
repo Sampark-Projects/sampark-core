@@ -17,7 +17,7 @@ export default {
       "legacy": "레거시"
     },
     "runtimes": {
-      "windshift": "Windshift 내장 런타임",
+      "windshift": "Spark 내장 런타임",
       "authorizedRunner": "승인된 코딩 러너",
       "legacyLocal": "레거시 로컬 런타임"
     },

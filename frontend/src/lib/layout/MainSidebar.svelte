@@ -103,7 +103,7 @@
 
 {#snippet sidebarHeader()}
   <!-- Logo -->
-  <Tooltip content="Windshift" placement="right" disabled={$uiStore.navExpanded}>
+  <Tooltip content="Spark" placement="right" disabled={$uiStore.navExpanded}>
     <a
       href="/"
       onclick={closePopoverSurface}
@@ -115,22 +115,22 @@
       {#if themeStore.isDarkMode && themeStore.activeTheme?.logo_url_dark}
         <img
           src={themeStore.activeTheme.logo_url_dark}
-          alt={themeStore.activeTheme.name || 'Windshift'}
+          alt={themeStore.activeTheme.name || 'Spark'}
           data-testid="nav-logo"
           class="max-w-8 max-h-8 object-contain flex-shrink-0"
         />
       {:else if themeStore.activeTheme?.logo_url}
         <img
           src={themeStore.activeTheme.logo_url}
-          alt={themeStore.activeTheme.name || 'Windshift'}
+          alt={themeStore.activeTheme.name || 'Spark'}
           data-testid="nav-logo"
           class="max-w-8 max-h-8 object-contain flex-shrink-0"
         />
       {:else}
-        <img src="windshift-3.svg" alt="Windshift" class="w-8 h-8 flex-shrink-0" />
+        <img src="spark-logo.png" alt="Spark" class="w-8 h-8 flex-shrink-0" />
       {/if}
       {#if $uiStore.navExpanded}
-        <span class="ml-3 font-semibold text-sm whitespace-nowrap">Windshift</span>
+        <span class="ml-3 font-semibold text-sm whitespace-nowrap">Spark</span>
       {/if}
     </a>
   </Tooltip>

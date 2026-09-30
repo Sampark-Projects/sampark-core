@@ -376,9 +376,9 @@ func (m Model) workspaceLabel() string {
 // support OSC 0 will pick it up.
 func (m Model) windowTitle() string {
 	if m.ctx.Workspace != nil {
-		return "Windshift · " + m.ctx.Workspace.Key
+		return "Spark · " + m.ctx.Workspace.Key
 	}
-	return "Windshift"
+	return "Spark"
 }
 
 // overlayDialog retains the board around the opaque dialog, preserving the

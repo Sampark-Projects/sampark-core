@@ -619,7 +619,7 @@
                   Xray test cases found
                 </h3>
                 <p class="text-sm" style="color: var(--ds-text-subtle);">
-                  Windshift positively identified {xray.totalTests.toLocaleString()} Xray
+                  Spark positively identified {xray.totalTests.toLocaleString()} Xray
                   {xray.totalTests === 1 ? ' Test' : ' Tests'} in the selected projects using
                   Xray-owned metadata.
                 </p>
@@ -631,7 +631,7 @@
             checked={xray.importTests}
             dataTestid="jira-import-xray-enabled"
             onchange={(enabled) => xray.importTests = enabled}
-            label="Import Xray Tests into Windshift Test Management"
+            label="Import Xray Tests into Spark Test Management"
             hint="When enabled, Xray Test issues become test cases instead of ordinary work items. Leave off to use the normal issue mapping."
           />
 
@@ -761,7 +761,7 @@
                     </div>
                   {:else}
                     <p class="mt-2 text-xs" style="color: var(--ds-text-subtle);">
-                      Windshift workspace key: <strong>{mapping.newWorkspaceKey}</strong>
+                      Spark workspace key: <strong>{mapping.newWorkspaceKey}</strong>
                     </p>
                   {/if}
                   {#if mapping.isTeamManaged}
@@ -773,7 +773,7 @@
                         <p class="text-sm">
                           Issue data and observed custom fields will import. Jira does not expose
                           company-managed workflow and screen schemes for this team-managed project,
-                          so Windshift will create a conservative initial workflow and default screens
+                          so Spark will create a conservative initial workflow and default screens
                           and report that configuration boundary.
                         </p>
                       </AlertBox>
@@ -970,7 +970,7 @@
                 </span>
               </div>
               <p class="text-xs" style="color: var(--ds-text-subtle);">
-                Each accessible Jira Assets schema becomes a Windshift asset set. Object types, attributes, and objects are recreated inside that set.
+                Each accessible Jira Assets schema becomes a Spark asset set. Object types, attributes, and objects are recreated inside that set.
               </p>
               <div class="space-y-2">
                 {#each analysis.result.asset_schemas as schema}
@@ -1011,7 +1011,7 @@
                 <h3 class="font-medium" style="color: var(--ds-text);">Jira Service Management portals</h3>
               </div>
               <p class="text-xs" style="color: var(--ds-text-subtle);">
-                Each service project becomes a Windshift portal. Its request types are created before requests and portal customers are imported.
+                Each service project becomes a Spark portal. Its request types are created before requests and portal customers are imported.
               </p>
               <div class="space-y-2">
                 {#each analysis.result.service_management_projects as project}
@@ -1056,13 +1056,13 @@
               <p class="text-xs" style="color: var(--ds-text-subtle);">
                 We found {organizationCount} customer {organizationCount === 1 ? 'organization' : 'organizations'}
                 with {organizationMemberCount} member {organizationMemberCount === 1 ? 'account' : 'accounts'}.
-                Windshift portal customers are imported either way.
+                Spark portal customers are imported either way.
               </p>
               <Checkbox
                 checked={mappings.serviceManagement.importOrganizations}
                 dataTestid="jira-import-import-organizations"
                 onchange={(checked) => jiraImport.setImportServiceManagementOrganizations(checked)}
-                label="Create Windshift customer organizations"
+                label="Create Spark customer organizations"
                 hint="Also assign imported portal customers to their Jira Service Management organization. Leave off to import customers without organizations."
                 size="small"
               />

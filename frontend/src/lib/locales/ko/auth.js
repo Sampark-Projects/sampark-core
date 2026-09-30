@@ -15,7 +15,7 @@ export default {
     "confirmPassword": "비밀번호 확인",
     "passwordRequired": "비밀번호는 필수입니다",
     "rememberMe": "로그인 유지",
-    "staySignedIn": "Windshift 로그인 상태를 30일 동안 유지합니다",
+    "staySignedIn": "Spark 로그인 상태를 30일 동안 유지합니다",
     "emailOrUsername": "이메일 또는 사용자 이름",
     "welcomeBack": "다시 오신 것을 환영합니다",
     "loginTitle": "계정에 로그인하세요",

@@ -398,7 +398,7 @@ export const api = {
   // User SCM connections (personal OAuth tokens)
   userSCM,
 
-  // Issue Sync (GitHub Issues → Windshift Items)
+  // Issue Sync (GitHub Issues → Spark Items)
   issueSync,
 
   // Integration Providers (Notion, Confluence, etc.)

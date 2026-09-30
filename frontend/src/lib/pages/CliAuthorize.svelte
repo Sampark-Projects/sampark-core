@@ -199,7 +199,7 @@
 {:else}
 	<ConsentCard
 		icon={Terminal}
-		title="Authorize Windshift CLI"
+		title="Authorize Spark CLI"
 		{scopes}
 		{scopeDescriptions}
 		{error}

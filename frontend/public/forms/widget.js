@@ -1,5 +1,5 @@
 /**
- * Windshift Forms Widget
+ * Spark Forms Widget
  * Lightweight embeddable form widget (~1KB)
  *
  * Usage:
@@ -13,7 +13,7 @@
   const slug = script.getAttribute('data-slug');
   const targetId = script.getAttribute('data-target');
   if (!slug || !targetId) {
-    console.error('[Windshift Forms] Missing data-slug or data-target attribute');
+    console.error('[Spark Forms] Missing data-slug or data-target attribute');
     return;
   }
 
@@ -23,7 +23,7 @@
   const init = () => {
     const target = document.getElementById(targetId);
     if (!target) {
-      console.error(`[Windshift Forms] Target element not found: #${targetId}`);
+      console.error(`[Spark Forms] Target element not found: #${targetId}`);
       return;
     }
 
@@ -35,7 +35,7 @@
     iframe.style.height = '600px';
     iframe.setAttribute('loading', 'lazy');
     iframe.setAttribute('allow', 'clipboard-write');
-    iframe.title = 'Windshift Form';
+    iframe.title = 'Spark Form';
 
     // Listen for resize messages from the embedded form
     window.addEventListener('message', (event) => {

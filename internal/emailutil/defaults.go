@@ -12,7 +12,7 @@ type DefaultTemplate struct {
 }
 
 // DefaultTemplates returns the four built-in transactional email templates
-// shipped with Windshift. Each template uses email-safe HTML (table layout,
+// shipped with Spark. Each template uses email-safe HTML (table layout,
 // inline styles, no flexbox or CSS variables) and the brand color #2874bb.
 func DefaultTemplates() []DefaultTemplate {
 	return []DefaultTemplate{
@@ -33,14 +33,14 @@ func DefaultTemplates() []DefaultTemplate {
 		{
 			Name:        TemplateInvitation,
 			Description: "Sent to invite a new user and prompt them to set a password.",
-			Subject:     "You've been invited to Windshift",
+			Subject:     "You've been invited to Spark",
 			HTMLBody:    invitationHTML,
 			TextBody:    invitationText,
 		},
 		{
 			Name:        TemplateNotificationBatch,
 			Description: "Sent when a user has unread notifications batched for delivery.",
-			Subject:     `Windshift — {{if eq .NotificationCount 1}}You have 1 new notification{{else}}You have {{.NotificationCount}} new notifications{{end}}`,
+			Subject:     `Spark — {{if eq .NotificationCount 1}}You have 1 new notification{{else}}You have {{.NotificationCount}} new notifications{{end}}`,
 			HTMLBody:    notificationBatchHTML,
 			TextBody:    notificationBatchText,
 		},
@@ -83,7 +83,7 @@ const emailShellOpen = `<!DOCTYPE html>
 <tr><td align="center">
 <table role="presentation" width="560" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;">
 <tr><td style="padding:24px 32px;border-bottom:1px solid #f1f2f4;">
-<span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#2874bb;text-transform:uppercase;">Windshift</span>
+<span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#2874bb;text-transform:uppercase;">Spark</span>
 </td></tr>
 <tr><td style="padding:32px;font-size:15px;line-height:1.6;color:#1f2937;">
 `
@@ -124,7 +124,7 @@ const emailVerificationHTML = emailShellOpen + `<h1 style="margin:0 0 16px;font-
 <p style="margin:0 0 24px;"><a href="{{.VerificationURL}}" style="` + buttonStyle + `">Verify email</a></p>
 <p style="margin:0 0 8px;font-size:13px;color:#6b7280;">If the button doesn't work, copy and paste this URL into your browser:</p>
 <p style="margin:0 0 24px;font-size:13px;word-break:break-all;"><a href="{{.VerificationURL}}" style="color:#2874bb;text-decoration:underline;">{{.VerificationURL}}</a></p>
-<p style="margin:0;font-size:13px;color:#6b7280;">This link expires in 24 hours. If you didn't create a Windshift account, you can ignore this email.</p>
+<p style="margin:0;font-size:13px;color:#6b7280;">This link expires in 24 hours. If you didn't create a Spark account, you can ignore this email.</p>
 ` + emailShellClose
 
 const emailVerificationText = `Hi {{.FirstName}},
@@ -133,10 +133,10 @@ Please confirm your email address to finish setting up your account:
 
 {{.VerificationURL}}
 
-This link expires in 24 hours. If you didn't create a Windshift account, you can ignore this email.
+This link expires in 24 hours. If you didn't create a Spark account, you can ignore this email.
 `
 
-const invitationHTML = emailShellOpen + `<h1 style="margin:0 0 16px;font-size:22px;font-weight:600;color:#0f172a;letter-spacing:-0.01em;">You've been invited to Windshift</h1>
+const invitationHTML = emailShellOpen + `<h1 style="margin:0 0 16px;font-size:22px;font-weight:600;color:#0f172a;letter-spacing:-0.01em;">You've been invited to Spark</h1>
 <p style="margin:0 0 8px;">Hi {{.FirstName}},</p>
 <p style="margin:0 0 24px;">Set a password to activate your account and start collaborating with your team.</p>
 <p style="margin:0 0 24px;"><a href="{{.InvitationURL}}" style="` + buttonStyle + `">Set your password</a></p>
@@ -147,7 +147,7 @@ const invitationHTML = emailShellOpen + `<h1 style="margin:0 0 16px;font-size:22
 
 const invitationText = `Hi {{.FirstName}},
 
-You've been invited to join Windshift. Set a password to activate your account:
+You've been invited to join Spark. Set a password to activate your account:
 
 {{.InvitationURL}}
 
@@ -170,14 +170,14 @@ const notificationBatchHTML = emailShellOpen + `<h1 style="margin:0 0 16px;font-
 
 const notificationBatchText = `Hi {{.UserName}},
 
-You have {{.NotificationCount}} new notification{{if ne .NotificationCount 1}}s{{end}} from Windshift:
+You have {{.NotificationCount}} new notification{{if ne .NotificationCount 1}}s{{end}} from Spark:
 
 {{range .Notifications}}* {{.Title}}
   {{.Message}}
   {{.FormattedTime}}
 
 {{end}}
-Manage your notification preferences in Windshift.
+Manage your notification preferences in Spark.
 `
 
 const portalReplyHTML = emailShellOpen + `<p style="margin:0 0 16px;font-size:14px;color:#6b7280;">

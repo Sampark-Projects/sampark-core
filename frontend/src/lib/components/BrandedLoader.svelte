@@ -14,7 +14,7 @@
 >
   <div class="text-center">
     <img
-      src="windshift-3.svg"
+      src="spark-logo.png"
       alt={APP_NAME}
       class="mx-auto mb-4 h-16 w-16 motion-safe:animate-pulse"
       width="64"

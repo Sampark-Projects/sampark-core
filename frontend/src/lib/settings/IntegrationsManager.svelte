@@ -1,5 +1,5 @@
 <script>
-	// OAuth integrations share a page: outbound providers connect Windshift to
+	// OAuth integrations share a page: outbound providers connect Spark to
 	// external apps, while inbound clients authorize apps to mint user tokens.
 
 	import { onMount } from 'svelte';

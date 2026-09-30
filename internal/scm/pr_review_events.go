@@ -285,7 +285,7 @@ func (s *SyncService) processPRReviewInbox(ctx context.Context, provider Provide
 		switch event.Status {
 		case "running":
 			if supportsReplies && event.AckID == 0 {
-				s.ensureEventReply(ctx, issues, owner, repo, pr.Number, event, "ack", fmt.Sprintf("Windshift queued coding-agent run %d for this review request.", event.RunID))
+				s.ensureEventReply(ctx, issues, owner, repo, pr.Number, event, "ack", fmt.Sprintf("Spark queued coding-agent run %d for this review request.", event.RunID))
 			}
 			continue
 		case "reply_pending":
@@ -298,7 +298,7 @@ func (s *SyncService) processPRReviewInbox(ctx context.Context, provider Provide
 		})
 		if authErr != nil {
 			if event.Attempts >= 2 {
-				body := "Windshift could not verify that this reviewer is authorized to run the coding agent. No run was started."
+				body := "Spark could not verify that this reviewer is authorized to run the coding agent. No run was started."
 				_, _ = s.db.ExecWriteContext(ctx, `UPDATE agent_pr_review_events SET status='reply_pending', terminal_body=?, last_error=?, attempts=attempts+1, updated_at=CURRENT_TIMESTAMP WHERE id=?`, body, authErr.Error(), event.ID)
 				event.Status, event.TerminalBody = "reply_pending", body
 				s.ensureEventReply(ctx, issues, owner, repo, pr.Number, event, "terminal", body)
@@ -355,7 +355,7 @@ func (s *SyncService) processPRReviewInbox(ctx context.Context, provider Provide
 		s.setReviewEventStatus(ctx, event.ID, "running", "", result.RunID)
 		event.RunID = result.RunID
 		if supportsReplies {
-			s.ensureEventReply(ctx, issues, owner, repo, pr.Number, event, "ack", fmt.Sprintf("Windshift queued coding-agent run %d for this review request.", result.RunID))
+			s.ensureEventReply(ctx, issues, owner, repo, pr.Number, event, "ack", fmt.Sprintf("Spark queued coding-agent run %d for this review request.", result.RunID))
 		}
 	}
 }

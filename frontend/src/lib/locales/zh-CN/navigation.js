@@ -189,10 +189,10 @@ export default {
   },
 
   about: {
-    title: '关于 Windshift',
+    title: '关于 Spark',
     subtitle: '为现代团队设计的综合工作管理平台',
-    whatIs: '什么是 Windshift？',
-    description: 'Windshift 是一款强大的工作管理应用，将项目跟踪、测试管理、时间跟踪和团队协作整合到一个统一的平台中。使用现代技术构建，专为灵活性而设计，适应您团队独特的工作流程。',
+    whatIs: '什么是 Spark？',
+    description: 'Spark 是一款强大的工作管理应用，将项目跟踪、测试管理、时间跟踪和团队协作整合到一个统一的平台中。使用现代技术构建，专为灵活性而设计，适应您团队独特的工作流程。',
     keyFeatures: '核心功能',
     projectManagement: '项目管理',
     projectManagementDesc: '使用自定义字段、工作流和状态跟踪分层组织工作项。',
@@ -217,7 +217,7 @@ export default {
   },
 
   onboarding: {
-    welcomeTo: '欢迎使用 Windshift',
+    welcomeTo: '欢迎使用 Spark',
     getStartedMessage: '让我们通过创建您的第一个工作区和工作项来开始',
     progress: '进度',
     completed: '已完成',

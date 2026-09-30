@@ -1,4 +1,4 @@
-/* Windshift mobile PWA service worker.
+/* Spark mobile PWA service worker.
  * Conservative: network-only application assets and API calls, a self-contained
  * recovery document for failed navigation, plus Web Push. We deliberately do
  * not cache index.html without its versioned asset graph: that produces an
@@ -21,7 +21,7 @@ function recoveryResponse() {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#ffffff" />
-    <title>Windshift — Connection problem</title>
+    <title>Spark — Connection problem</title>
     <style>
       :root { color-scheme: light dark; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
       * { box-sizing: border-box; }
@@ -43,7 +43,7 @@ function recoveryResponse() {
   <body>
     <main>
       <div class="mark" aria-hidden="true"></div>
-      <h1>Windshift couldn't connect</h1>
+      <h1>Spark couldn't connect</h1>
       <p>Check your connection or server, then try again.</p>
       <button id="retry" type="button">Retry</button>
     </main>
@@ -154,17 +154,17 @@ self.addEventListener('push', (event) => {
   try {
     payload = event.data ? event.data.json() : {};
   } catch {
-    payload = { title: 'Windshift', body: event.data ? event.data.text() : '' };
+    payload = { title: 'Spark', body: event.data ? event.data.text() : '' };
   }
 
-  const title = payload.title || 'Windshift';
+  const title = payload.title || 'Spark';
   const options = {
     body: payload.body || '',
     tag: payload.tag || payload.id || undefined,
     data: { url: scopedURL(payload.url || 'm') },
     icon: scopedURL('apple-touch-icon.png'),
     badge: scopedURL('favicon-32x32.png'),
-    actions: [{ action: 'open', title: 'Open Windshift' }],
+    actions: [{ action: 'open', title: 'Open Spark' }],
   };
   event.waitUntil(self.registration.showNotification(title, options));
 });

@@ -49,8 +49,8 @@ export default {
       send: 'Send',
     },
     notifications: {
-      installRequired: 'Add Windshift to your Home Screen to enable push notifications.',
-      blocked: 'Notifications are blocked. Enable them for Windshift in your device settings.',
+      installRequired: 'Add Spark to your Home Screen to enable push notifications.',
+      blocked: 'Notifications are blocked. Enable them for Spark in your device settings.',
       enabled: 'Notifications on',
       enable: 'Enable notifications',
       caughtUp: "You're all caught up",
@@ -68,11 +68,11 @@ export default {
     },
     install: {
       title: 'Add to Home Screen',
-      description: 'Install Windshift as an app to launch it full-screen and receive push notifications.',
+      description: 'Install Spark as an app to launch it full-screen and receive push notifications.',
       openSafari: 'Open this page in Safari (not inside another app).',
       share: 'Tap the Share button in the toolbar.',
       addToHome: 'Choose Add to Home Screen.',
-      launch: 'Tap Add, then open Windshift from the new icon.',
+      launch: 'Tap Add, then open Spark from the new icon.',
       dismiss: 'Got it',
     },
     pages: {

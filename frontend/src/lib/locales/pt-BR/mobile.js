@@ -49,8 +49,8 @@ export default {
       send: 'Enviar',
     },
     notifications: {
-      installRequired: 'Adicione o Windshift à sua Tela de Início para ativar as notificações push.',
-      blocked: 'As notificações estão bloqueadas. Ative-as para o Windshift nos ajustes do dispositivo.',
+      installRequired: 'Adicione o Spark à sua Tela de Início para ativar as notificações push.',
+      blocked: 'As notificações estão bloqueadas. Ative-as para o Spark nos ajustes do dispositivo.',
       enabled: 'Notificações ativadas',
       enable: 'Ativar notificações',
       caughtUp: 'Você está em dia',
@@ -68,11 +68,11 @@ export default {
     },
     install: {
       title: 'Adicionar à Tela de Início',
-      description: 'Instale o Windshift como app para abri-lo em tela cheia e receber notificações push.',
+      description: 'Instale o Spark como app para abri-lo em tela cheia e receber notificações push.',
       openSafari: 'Abra esta página no Safari (não dentro de outro app).',
       share: 'Toque no botão Compartilhar da barra de ferramentas.',
       addToHome: 'Escolha “Adicionar à Tela de Início”.',
-      launch: 'Toque em Adicionar e abra o Windshift pelo novo ícone.',
+      launch: 'Toque em Adicionar e abra o Spark pelo novo ícone.',
       dismiss: 'Entendi',
     },
     pages: {

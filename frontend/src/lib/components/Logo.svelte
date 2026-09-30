@@ -9,8 +9,8 @@
 </script>
 
 <img
-  src="windshift-3.svg"
-  alt="Windshift"
+  src="spark-logo.png"
+  alt="Spark"
   width={size === 'small' ? 24 : size === 'large' ? 48 : 32}
   height={size === 'small' ? 24 : size === 'large' ? 48 : 32}
   decoding="async"

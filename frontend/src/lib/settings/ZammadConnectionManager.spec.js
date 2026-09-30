@@ -46,7 +46,7 @@ const connection = {
   has_oauth_client_secret: true,
   oauth_connected: true,
   default_group_id: 0,
-  default_group_name: 'Windshift',
+  default_group_name: 'Spark',
   allowed_groups: [
     { id: 2, name: 'Support' },
     { id: 3, name: 'Escalations' },
@@ -88,8 +88,8 @@ describe('ZammadConnectionManager', () => {
     mocks.testConnection.mockResolvedValue({
       metadata: {
         groups: [
-          { id: 2, name: 'Windshift' },
-          { id: 3, name: 'Windshift Escalation' },
+          { id: 2, name: 'Spark' },
+          { id: 3, name: 'Spark Escalation' },
         ],
         states: [],
         correlation_field_verified: true,
@@ -120,7 +120,7 @@ describe('ZammadConnectionManager', () => {
     await waitFor(() =>
       expect(mocks.updateConnection).toHaveBeenCalledWith(
         'zammad-dev',
-        expect.objectContaining({ default_group_id: 2, default_group_name: 'Windshift' })
+        expect.objectContaining({ default_group_id: 2, default_group_name: 'Spark' })
       )
     );
   });
@@ -132,7 +132,7 @@ describe('ZammadConnectionManager', () => {
         default_group_id: 99,
         default_group_name: '',
         allowed_groups: [
-          { id: 2, name: 'Windshift' },
+          { id: 2, name: 'Spark' },
           { id: 99, name: '' },
         ],
       },
@@ -140,7 +140,7 @@ describe('ZammadConnectionManager', () => {
     mocks.testConnection.mockResolvedValue({
       metadata: {
         groups: [
-          { id: 2, name: 'Windshift' },
+          { id: 2, name: 'Spark' },
           { id: 99, name: '' },
         ],
         states: [],
@@ -166,7 +166,7 @@ describe('ZammadConnectionManager', () => {
     const defaultGroupOptions = Array.from(defaultGroupSelect.options).map(
       (option) => option.textContent
     );
-    expect(defaultGroupOptions).toEqual(['Windshift', 'zammad.unverifiedGroup']);
+    expect(defaultGroupOptions).toEqual(['Spark', 'zammad.unverifiedGroup']);
     expect(defaultGroupSelect.value).toBe('99');
 
     await fireEvent.input(within(dialog).getByLabelText('settings.groups.groupName'), {

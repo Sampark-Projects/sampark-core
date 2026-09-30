@@ -98,7 +98,7 @@ export default {
       },
       "integrationProviders": {
         "title": "연동",
-        "description": "Windshift가 연결하는 외부 연동과 OAuth로 접근을 승인받는 앱을 관리합니다."
+        "description": "Spark가 연결하는 외부 연동과 OAuth로 접근을 승인받는 앱을 관리합니다."
       },
       "systemImport": {
         "title": "시스템 가져오기",
@@ -199,7 +199,7 @@ export default {
       "notConfigured": "미설정",
       "pathWritable": "경로에 쓰기 가능",
       "pathStatusUnknown": "경로 상태 알 수 없음",
-      "enableNote": "첨부파일을 사용하려면 --attachment-path 옵션으로 Windshift 서버를 다시 시작하세요.",
+      "enableNote": "첨부파일을 사용하려면 --attachment-path 옵션으로 Spark 서버를 다시 시작하세요.",
       "enableExample": "예: ./windshift --attachment-path /path/to/attachments",
       "generalSettings": "일반 설정",
       "enableAttachments": "첨부파일 사용",
@@ -588,7 +588,7 @@ export default {
       "autoProvisionUsersDesc": "첫 SSO 로그인 시 사용자 계정을 자동으로 만듭니다",
       "manualUserCreationOnly": "수동으로만 사용자 생성",
       "trustIdpEmailVerification": "IdP 이메일 인증 없이 계정 연결",
-      "trustIdpEmailVerificationDesc": "사용하면 제공자가 이메일 주소를 인증하지 않아도 해당 주소로 기존 Windshift 계정에 연결합니다. 사용하지 않으면 제공자가 인증한 이메일 주소가 있어야 계정을 연결할 수 있습니다.",
+      "trustIdpEmailVerificationDesc": "사용하면 제공자가 이메일 주소를 인증하지 않아도 해당 주소로 기존 Spark 계정에 연결합니다. 사용하지 않으면 제공자가 인증한 이메일 주소가 있어야 계정을 연결할 수 있습니다.",
       "idpVerificationNotEnforced": "계정 연결에 인증된 이메일 필요",
       "unsafeProvisioningWarningTitle": "미인증 이메일로 계정 연결 허용됨",
       "unsafeProvisioningWarningBody": "제공자가 이메일 주소를 미인증으로 표시해도 해당 주소로 기존 계정에 연결합니다. 제공자가 사용자의 이메일 주소를 관리하는 경우에만 사용하세요.",
@@ -641,7 +641,7 @@ export default {
     },
     "emailTemplates": {
       "title": "이메일 템플릿",
-      "subtitle": "Windshift가 보내는 시스템 이메일의 제목과 본문을 수정합니다.",
+      "subtitle": "Spark가 보내는 시스템 이메일의 제목과 본문을 수정합니다.",
       "loading": "불러오는 중…",
       "empty": "이메일 템플릿이 없습니다.",
       "template": "템플릿",

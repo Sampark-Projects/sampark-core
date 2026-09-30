@@ -25,7 +25,7 @@ export default {
   },
   "jiraImport": {
     "mapping": {
-      "issueTypesDesc": "Arbeitselementtypen werden als Arbeitselementtypen in Windshift erstellt"
+      "issueTypesDesc": "Arbeitselementtypen werden als Arbeitselementtypen in Spark erstellt"
     },
     "preview": {
       "itemTypes": "Arbeitselementtypen"

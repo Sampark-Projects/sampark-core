@@ -20,7 +20,7 @@ const app = mount(App, {
   target,
 });
 
-// Refresh other open Windshift tabs when this tab mutates a work item.
+// Refresh other open Spark tabs when this tab mutates a work item.
 // Handler injected (rather than imported by crossTabSync) to avoid an api ↔
 // stores import cycle. initCrossTabSync is a no-op when BroadcastChannel is
 // unavailable, so this is safe to run unconditionally.

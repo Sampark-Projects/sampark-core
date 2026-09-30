@@ -355,7 +355,7 @@ func (h *JiraImportHandler) prepareJiraGlobalModel(
 	return model, false
 }
 
-// setupJiraProject prepares one project's workspace and Windshift model:
+// setupJiraProject prepares one project's workspace and Spark model:
 // workspace, JSM portal, workflows and screens, milestones, iterations,
 // boards, and the time project. It returns ok=false when the project must be
 // skipped (no workspace mapping, workspace/JSM failure, or a mapping failure).
@@ -513,7 +513,7 @@ func (h *JiraImportHandler) importJiraIssueBatches(
 	}
 
 	// Track user maps across all batches for this project. usernameMap holds
-	// the same accountID keys mapped to Windshift usernames so the ADF
+	// the same accountID keys mapped to Spark usernames so the ADF
 	// converter can render @mentions as `@<username>` rather than display
 	// text — letting MentionService pick them up via its standard regex.
 	im.userMap = make(map[string]int)
@@ -868,13 +868,13 @@ func (h *JiraImportHandler) jiraImportFidelityFindings(jobID string) []jiraImpor
 			Code:        "jira_project_roles_not_imported",
 			Severity:    "warning",
 			Disposition: "unsupported",
-			Summary:     "Jira project roles are not copied because Windshift workspace roles and grants have different permission semantics.",
+			Summary:     "Jira project roles are not copied because Spark workspace roles and grants have different permission semantics.",
 		},
 		{
 			Code:        "jira_permission_schemes_not_imported",
 			Severity:    "warning",
 			Disposition: "unsupported",
-			Summary:     "Jira permission schemes are not converted into Windshift permissions; existing Windshift access controls remain authoritative.",
+			Summary:     "Jira permission schemes are not converted into Spark permissions; existing Spark access controls remain authoritative.",
 		},
 	}
 	if _, drift, previousImports := h.jiraImportPlanResult(jobID); drift {
@@ -912,7 +912,7 @@ func (h *JiraImportHandler) jiraImportFidelityFindings(jobID string) []jiraImpor
 				Code:        "jira_votes_preserved",
 				Severity:    "info",
 				Disposition: "preserved_metadata",
-				Summary:     "Jira votes and available voter identities were preserved as item metadata because Windshift has no voting model.",
+				Summary:     "Jira votes and available voter identities were preserved as item metadata because Spark has no voting model.",
 				Count:       voteCount,
 			})
 		}
@@ -921,7 +921,7 @@ func (h *JiraImportHandler) jiraImportFidelityFindings(jobID string) []jiraImpor
 				Code:        "jira_issue_security_preserved",
 				Severity:    "warning",
 				Disposition: "preserved_metadata",
-				Summary:     "Jira issue-security levels were preserved as item metadata and were not translated into broader Windshift workspace access.",
+				Summary:     "Jira issue-security levels were preserved as item metadata and were not translated into broader Spark workspace access.",
 				Count:       securityCount,
 			})
 		}
@@ -980,7 +980,7 @@ func (h *JiraImportHandler) jiraImportFidelityFindings(jobID string) []jiraImpor
 			Code:        "jira_datetime_editing_lossy",
 			Severity:    "warning",
 			Disposition: "lossy",
-			Summary:     "Jira datetime values retain their timestamp text, but Windshift currently edits them through a date-only field model.",
+			Summary:     "Jira datetime values retain their timestamp text, but Spark currently edits them through a date-only field model.",
 			Count:       dateTimeCount,
 		})
 	}
@@ -1113,7 +1113,7 @@ func mergeJiraConfiguredChoiceLabels(
 // the complete set of populated select/multiselect labels in the import scope.
 // Jira permits one Assets schema per custom field while allowing that field on
 // multiple projects, so this resolution is global by Jira field ID rather than
-// per project. Windshift choice fields store numeric option IDs, so labels are
+// per project. Spark choice fields store numeric option IDs, so labels are
 // discovered up front and normalized before values are written. All source
 // calls are read-only searches.
 func (h *JiraImportHandler) preflightJiraCustomFields(
@@ -1473,7 +1473,7 @@ type jiraImportWorkflowEdge struct {
 }
 
 // ensureWorkflowsAndConfigSet fetches Jira's configured graph when the client
-// supports it, creates Windshift workflow(s), and assigns a configuration set
+// supports it, creates Spark workflow(s), and assigns a configuration set
 // to the workspace. Status membership is only a fallback: it is never expanded
 // into guessed all-to-all transitions.
 func (h *JiraImportHandler) ensureWorkflowsAndConfigSet(
@@ -1505,7 +1505,7 @@ func (h *JiraImportHandler) ensureWorkflowsAndConfigSet(
 			continue
 		}
 
-		// Map statuses to Windshift IDs
+		// Map statuses to Spark IDs
 		statusIDSet := make(map[int]bool)
 		for _, s := range its.Statuses {
 			if wsStatusID, ok := statusMap[s.ID]; ok {
@@ -2347,10 +2347,10 @@ func (h *JiraImportHandler) ensureAffectsVersionCustomField(_ context.Context, j
 	return &jiraAffectsVersionCustomField{FieldID: fieldID, OptionIDsByJiraID: optionIDsByJiraID, OptionLabelsByJiraID: optionLabelsByJiraID}, nil
 }
 
-// ensureCustomFields creates or maps global Windshift custom fields selected
+// ensureCustomFields creates or maps global Spark custom fields selected
 // in the Jira mapping step. The returned map is Jira customfield_* ID →
-// Windshift custom_field_definitions.id and is used when writing an item's
-// custom_field_values JSON so imported values are keyed by Windshift field IDs,
+// Spark custom_field_definitions.id and is used when writing an item's
+// custom_field_values JSON so imported values are keyed by Spark field IDs,
 // not transient Jira keys.
 //
 // Story Points is intentionally excluded: it maps to items.story_points as a
@@ -2401,7 +2401,7 @@ func (h *JiraImportHandler) ensureCustomFields(
 			}
 		}
 		if !services.IsValidCustomFieldType(fieldType) {
-			slog.Warn("Skipping Jira custom field with unsupported Windshift type",
+			slog.Warn("Skipping Jira custom field with unsupported Spark type",
 				slog.String("component", "jira"),
 				slog.String("jiraFieldID", m.JiraID),
 				slog.String("jiraFieldName", m.JiraName),
@@ -2456,7 +2456,7 @@ func (h *JiraImportHandler) ensureCustomFields(
 				// distinct custom fields with the same display name and type, so
 				// only reuse a definition previously created for this Jira field.
 				// Operators can explicitly choose action=map to reuse an unrelated
-				// existing Windshift definition.
+				// existing Spark definition.
 				compatible := models.CanonicalCustomFieldType(existingType) == fieldType && existing.Description == sourceDescription
 				if compatible && fieldType == string(jira.FieldTypeAsset) {
 					var existingConfig struct {
@@ -2598,7 +2598,7 @@ func (h *JiraImportHandler) ensureJiraIssueKeyCustomField(jobID string) (int, er
 }
 
 // ensureMilestones creates milestones for Jira versions in a workspace
-// Returns a map from Jira version ID to Windshift milestone ID
+// Returns a map from Jira version ID to Spark milestone ID
 //
 //nolint:unparam // error return kept for interface consistency with other ensure* methods
 func (h *JiraImportHandler) ensureMilestones(_ context.Context, jobID string, workspaceID int, mappings []VersionMapping) (map[string]int, error) {
@@ -2676,7 +2676,7 @@ func (h *JiraImportHandler) ensureStatuses(_ context.Context, jobID string, mapp
 			continue
 		}
 
-		// Map Jira category to Windshift category ID
+		// Map Jira category to Spark category ID
 		// Default category IDs: 1="To Do", 2="In Progress", 3="Done"
 		categoryID := 1
 		switch m.CategoryKey {

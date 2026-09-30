@@ -431,7 +431,7 @@
                 >
                   {template.default_type === 'coding'
                     ? 'Coding agent that works in connected repositories and opens pull requests.'
-                    : 'Windshift agent for workspace planning and coordination.'}
+                    : 'Spark agent for workspace planning and coordination.'}
                 </p>
               </Card>
             </button>
@@ -470,7 +470,7 @@
               id="agent-create-type"
               bind:value={profileType}
               options={[
-                { value: 'standard', label: 'Standard · Windshift runtime' },
+                { value: 'standard', label: 'Standard · Spark runtime' },
                 { value: 'coding', label: 'Coding · authorized runner' },
               ]}
               onchange={changeProfileType}

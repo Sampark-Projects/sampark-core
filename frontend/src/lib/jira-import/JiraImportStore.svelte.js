@@ -488,7 +488,7 @@ export const jiraImport = {
       assetSchemaId: f.windshift_field_type === 'asset' ? 'auto' : null,
     }));
     mappingsState.serviceManagement = {
-      // Customer organizations are global Windshift entities, so importing
+      // Customer organizations are global Spark entities, so importing
       // them always requires an explicit operator choice.
       importOrganizations: false,
     };

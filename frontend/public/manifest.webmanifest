@@ -1,8 +1,8 @@
 {
   "id": "./m",
-  "name": "Windshift",
-  "short_name": "Windshift",
-  "description": "Review and manage your Windshift work from your phone.",
+  "name": "Spark",
+  "short_name": "Spark",
+  "description": "Review and manage your Spark work from your phone.",
   "lang": "en",
   "dir": "ltr",
   "categories": ["business", "productivity"],
@@ -46,9 +46,9 @@
       "type": "image/png"
     },
     {
-      "src": "windshift-3.svg",
+      "src": "spark-logo.png",
       "sizes": "any",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "purpose": "any maskable"
     }
   ]

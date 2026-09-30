@@ -8,7 +8,7 @@
   import StaticViewBackground from '../../../lib/layout/StaticViewBackground.svelte';
   import ViewHeader from '../../../lib/layout/ViewHeader.svelte';
 
-  const workspace = { id: 1, key: 'WIND', name: 'Windshift' };
+  const workspace = { id: 1, key: 'WIND', name: 'Spark' };
   const itemTypes = [{ id: 1, name: 'Task', icon: 'CheckSquare', color: '#2874bb' }];
   const priorities = [
     { id: 1, name: 'High', color: '#dc2626' },

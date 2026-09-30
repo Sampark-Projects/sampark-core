@@ -55,7 +55,7 @@ func BuildScenarioSpec(source string) (*gherkin.ScenarioSpec, *gherkin.ErrorList
 	if scenario.Name == "" {
 		return nil, &gherkin.ErrorList{Errors: []gherkin.ParseError{{
 			Line: scenario.Line, Column: 1,
-			Message: "the scenario needs a name: Windshift uses it as the test case title",
+			Message: "the scenario needs a name: Spark uses it as the test case title",
 		}}}
 	}
 	spec := doc.ScenarioSpecFrom(&scenario)
@@ -148,7 +148,7 @@ func (s *TestCaseService) ImportFeatureFile(workspaceID int, folderID *int, sour
 		if doc.Scenarios[i].Name == "" {
 			return nil, &TestBDDValidationError{Errors: []gherkin.ParseError{{
 				Line: doc.Scenarios[i].Line, Column: 1,
-				Message: "every scenario needs a name: Windshift uses it as the test case title",
+				Message: "every scenario needs a name: Spark uses it as the test case title",
 			}}}
 		}
 	}

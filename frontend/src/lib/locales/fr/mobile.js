@@ -49,8 +49,8 @@ export default {
       send: 'Envoyer',
     },
     notifications: {
-      installRequired: 'Ajoutez Windshift à votre écran d’accueil pour activer les notifications push.',
-      blocked: 'Les notifications sont bloquées. Activez-les pour Windshift dans les réglages de votre appareil.',
+      installRequired: 'Ajoutez Spark à votre écran d’accueil pour activer les notifications push.',
+      blocked: 'Les notifications sont bloquées. Activez-les pour Spark dans les réglages de votre appareil.',
       enabled: 'Notifications activées',
       enable: 'Activer les notifications',
       caughtUp: 'Vous êtes à jour',
@@ -68,11 +68,11 @@ export default {
     },
     install: {
       title: 'Ajouter à l’écran d’accueil',
-      description: 'Installez Windshift comme application pour l’ouvrir en plein écran et recevoir les notifications push.',
+      description: 'Installez Spark comme application pour l’ouvrir en plein écran et recevoir les notifications push.',
       openSafari: 'Ouvrez cette page dans Safari (pas dans une autre app).',
       share: 'Touchez le bouton Partager de la barre d’outils.',
       addToHome: 'Choisissez « Ajouter à l’écran d’accueil ».',
-      launch: 'Touchez Ajouter, puis ouvrez Windshift depuis la nouvelle icône.',
+      launch: 'Touchez Ajouter, puis ouvrez Spark depuis la nouvelle icône.',
       dismiss: 'Compris',
     },
     pages: {

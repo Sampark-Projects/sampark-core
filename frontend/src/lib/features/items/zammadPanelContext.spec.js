@@ -45,7 +45,7 @@ describe('Zammad metadata request guards', () => {
 
 describe('Zammad group choices', () => {
   it('offers only active groups with a verified persisted name', () => {
-    expect(isUsableZammadGroup({ id: 2, name: 'Windshift', active: true })).toBe(true);
+    expect(isUsableZammadGroup({ id: 2, name: 'Spark', active: true })).toBe(true);
     expect(isUsableZammadGroup({ id: 3, name: '   ', active: true })).toBe(false);
     expect(isUsableZammadGroup({ id: 4, name: 'Legacy', active: false })).toBe(false);
   });

@@ -73,7 +73,7 @@ export default {
       },
       "integrationProviders": {
         "title": "Integraciones",
-        "description": "Gestione las integraciones salientes a las que Windshift se conecta y las aplicaciones entrantes que autorizan a través de OAuth."
+        "description": "Gestione las integraciones salientes a las que Spark se conecta y las aplicaciones entrantes que autorizan a través de OAuth."
       },
       "diagnostics": {
         "description": "Estado del sistema: reloj del servidor, errores de acción y otras señales operativas"
@@ -86,7 +86,7 @@ export default {
       "importSuccess": "Conjunto de configuración importado correctamente"
     },
     "emailTemplates": {
-      "subtitle": "Personalizar el asunto y el cuerpo de los correos electrónicos transaccionales enviados por Windshift.",
+      "subtitle": "Personalizar el asunto y el cuerpo de los correos electrónicos transaccionales enviados por Spark.",
       "empty": "No se encontraron plantillas de correo electrónico.",
       "adminNotes": "Descripción (notas administrativas)",
       "activeHint": "Activo (desmarque para volver al valor predeterminado integrado)",
@@ -195,7 +195,7 @@ export default {
     "qlQueryRequired": "Se requiere una consulta QL",
     "qlQueryTokenRequired": "Las consultas QL en modo formulario deben hacer referencia a al menos un campo de formulario usando tokens ${field_identifier}",
     "qlQueryPlaceholder": "status = \"Active\" AND category = \"Hardware\"",
-    "qlQueryHint": "Filtrar activos usando QL (Windshift) Lenguaje de consulta).",
+    "qlQueryHint": "Filtrar activos usando QL (Spark) Lenguaje de consulta).",
     "qlQueryFormPlaceholder": "title = ${title} AND status = ${status}",
     "qlQueryFormHint": "Utilice tokens ${field_identifier} para hacer referencia a los valores enviados por el formulario.",
     "runMode": "Modo de ejecución",

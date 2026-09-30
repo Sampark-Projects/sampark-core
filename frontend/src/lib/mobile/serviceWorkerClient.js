@@ -54,7 +54,7 @@ function monitorRegistration(registration) {
     updateOffered = true;
     addToast({
       title: 'Update available',
-      message: 'A new version of Windshift is ready.',
+      message: 'A new version of Spark is ready.',
       variant: 'info',
       actionLabel: 'Reload',
       duration: 0,

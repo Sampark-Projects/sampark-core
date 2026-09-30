@@ -367,7 +367,7 @@ func (h *CalendarFeedHandler) buildICSContent(events []icsEvent, _ string) strin
 	writeFolded(&sb, "PRODID:-//Windshift//Calendar//EN")
 	writeFolded(&sb, "CALSCALE:GREGORIAN")
 	writeFolded(&sb, "METHOD:PUBLISH")
-	writeFolded(&sb, "X-WR-CALNAME:Windshift Calendar")
+	writeFolded(&sb, "X-WR-CALNAME:Spark Calendar")
 
 	for _, event := range events {
 		startTime, err := parseScheduleDateTime(event.ScheduledDate, event.ScheduledTime)

@@ -46,7 +46,7 @@ func printBanner() {
 	fmt.Print(bannerArt)
 	fmt.Print(colorReset)
 	fmt.Println()
-	fmt.Println(colorTeal + "                                      W I N D S H I F T" + colorReset)
+	fmt.Println(colorTeal + "                                      S P A R K" + colorReset)
 	fmt.Println("                                   Work Management Platform")
 	fmt.Println()
 }

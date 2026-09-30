@@ -1,3 +1,3 @@
 // Application constants
 
-export const APP_NAME = 'Windshift';
+export const APP_NAME = 'Spark';

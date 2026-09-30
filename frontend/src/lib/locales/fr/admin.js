@@ -78,7 +78,7 @@ export default {
       },
       integrationProviders: {
         title: 'Intégrations',
-        description: 'Gérer les intégrations sortantes de Windshift et les applications entrantes via OAuth.',
+        description: 'Gérer les intégrations sortantes de Spark et les applications entrantes via OAuth.',
       },
       systemImport: { title: 'Importation système', description: 'Importer des données à partir de systèmes externes' },
       linkTypes: { title: 'Types de liens', description: 'Gérer les types de liens entre les éléments' },
@@ -560,8 +560,8 @@ export default {
       manualUserCreationOnly: 'Création manuelle d\'utilisateurs uniquement',
       trustIdpEmailVerification: 'Faire confiance aux courriels vérifiés du fournisseur',
       trustIdpEmailVerificationDesc:
-        'Ignorer la vérification de courriel Windshift si le fournisseur omet le statut. Les adresses explicitement non vérifiées nécessiteront toujours une confirmation.',
-      idpVerificationNotEnforced: 'Windshift vérifie les courriels non confirmés',
+        'Ignorer la vérification de courriel Spark si le fournisseur omet le statut. Les adresses explicitement non vérifiées nécessiteront toujours une confirmation.',
+      idpVerificationNotEnforced: 'Spark vérifie les courriels non confirmés',
       unsafeProvisioningWarningTitle: 'Confiance aux courriels du fournisseur activée',
       unsafeProvisioningWarningBody:
         "Les utilisateurs dont le fournisseur omet la vérification de courriel peuvent être liés à des comptes existants par leur courriel. N'activez ceci que si le fournisseur gère strictement ces adresses.",
@@ -624,7 +624,7 @@ export default {
     // Email Templates
     emailTemplates: {
       title: 'Modèles de courriels',
-      subtitle: 'Personnaliser l\'objet et le corps des courriels transactionnels envoyés par Windshift.',
+      subtitle: 'Personnaliser l\'objet et le corps des courriels transactionnels envoyés par Spark.',
       loading: 'Chargement…',
       empty: 'Aucun modèle de courriel trouvé.',
       template: 'Modèle',

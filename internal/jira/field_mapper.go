@@ -33,7 +33,7 @@ func ParseJiraTimestamp(s string) *time.Time {
 	return nil
 }
 
-// WindshiftFieldType represents the field types supported by Windshift
+// WindshiftFieldType represents the field types supported by Spark
 type WindshiftFieldType string
 
 const (
@@ -67,7 +67,7 @@ type FieldMappingSuggestion struct {
 	PreserveRaw        bool               `json:"preserve_raw,omitempty"`
 }
 
-// jiraFieldTypeMap maps Jira field type keys to Windshift field types
+// jiraFieldTypeMap maps Jira field type keys to Spark field types
 var jiraFieldTypeMap = map[string]WindshiftFieldType{
 	// Standard Jira field types (from schema.type)
 	"string":    FieldTypeText,
@@ -79,7 +79,7 @@ var jiraFieldTypeMap = map[string]WindshiftFieldType{
 	"user":      FieldTypeUser,
 	"array":     FieldTypeMultiselect, // Depends on items type
 	"option":    FieldTypeSelect,
-	"priority":  FieldTypeSelect, // Maps to Windshift priority
+	"priority":  FieldTypeSelect, // Maps to Spark priority
 	"version":   FieldTypeMilestone,
 	"project":   FieldTypeText,     // Project references become text
 	"issuelink": FieldTypeUnmapped, // Handled separately as links
@@ -143,7 +143,7 @@ func IsKnownFieldType(field JiraCustomField) bool {
 	return ok
 }
 
-// MapJiraFieldToWindshift analyzes a Jira custom field and suggests a Windshift mapping
+// MapJiraFieldToWindshift analyzes a Jira custom field and suggests a Spark mapping
 func MapJiraFieldToWindshift(field JiraCustomField) FieldMappingSuggestion {
 	suggestion := FieldMappingSuggestion{
 		JiraFieldID:   field.ID,
@@ -170,7 +170,7 @@ func MapJiraFieldToWindshift(field JiraCustomField) FieldMappingSuggestion {
 		suggestion.WindshiftFieldType = windshiftType
 		if field.Schema != nil && field.Schema.Type == "array" && field.Schema.Items == "user" {
 			suggestion.WindshiftFieldType = FieldTypeMultiUser
-			suggestion.Notes = "Jira schema items=user; values map to Windshift users."
+			suggestion.Notes = "Jira schema items=user; values map to Spark users."
 		}
 		if windshiftType == FieldTypeUnmapped {
 			suggestion.CanMap = false
@@ -178,7 +178,7 @@ func MapJiraFieldToWindshift(field JiraCustomField) FieldMappingSuggestion {
 			case "com.atlassian.servicedesk:vp-origin":
 				suggestion.Notes = "Imported as the item's first-class portal request type"
 			case "com.pyxis.greenhopper.jira:gh-lexo-rank":
-				suggestion.Notes = "Used to order issue creation; Windshift fractional indexes are generated in Jira Rank order"
+				suggestion.Notes = "Used to order issue creation; Spark fractional indexes are generated in Jira Rank order"
 			default:
 				suggestion.Notes = "This field type cannot be directly mapped and will be skipped"
 			}
@@ -187,7 +187,7 @@ func MapJiraFieldToWindshift(field JiraCustomField) FieldMappingSuggestion {
 		}
 		if jiraFieldIsDateTime(field) {
 			suggestion.Notes = strings.TrimSpace(suggestion.Notes +
-				" Jira datetime values retain their RFC3339 timestamp in storage, but Windshift's date field renders calendar-date semantics; time-of-day editing is lossy.")
+				" Jira datetime values retain their RFC3339 timestamp in storage, but Spark's date field renders calendar-date semantics; time-of-day editing is lossy.")
 		}
 		return suggestion
 	}
@@ -203,7 +203,7 @@ func MapJiraFieldToWindshift(field JiraCustomField) FieldMappingSuggestion {
 			suggestion.Notes = "Inferred from Jira schema type number."
 		case "date", "datetime":
 			suggestion.WindshiftFieldType = FieldTypeDate
-			suggestion.Notes = "Inferred from Jira schema; datetime precision may be reduced by Windshift date rendering."
+			suggestion.Notes = "Inferred from Jira schema; datetime precision may be reduced by Spark date rendering."
 		case "user":
 			suggestion.WindshiftFieldType = FieldTypeUser
 			suggestion.Notes = "Inferred from Jira schema type user."
@@ -215,7 +215,7 @@ func MapJiraFieldToWindshift(field JiraCustomField) FieldMappingSuggestion {
 				suggestion.Notes = "Inferred from Jira schema array of option values."
 			case "user":
 				suggestion.WindshiftFieldType = FieldTypeMultiUser
-				suggestion.Notes = "Inferred from Jira schema; values map to Windshift users."
+				suggestion.Notes = "Inferred from Jira schema; values map to Spark users."
 			case "string":
 				suggestion.WindshiftFieldType = FieldTypeMultiselect
 				suggestion.Notes = "Inferred from Jira schema array items=string."
@@ -238,7 +238,7 @@ func MapJiraFieldToWindshift(field JiraCustomField) FieldMappingSuggestion {
 		addJiraChoiceMappingNote(&suggestion)
 		if jiraFieldIsDateTime(field) {
 			suggestion.Notes = strings.TrimSpace(suggestion.Notes +
-				" Jira datetime values retain their RFC3339 timestamp in storage, but Windshift's date field renders calendar-date semantics; time-of-day editing is lossy.")
+				" Jira datetime values retain their RFC3339 timestamp in storage, but Spark's date field renders calendar-date semantics; time-of-day editing is lossy.")
 		}
 		return suggestion
 	}
@@ -264,7 +264,7 @@ func addJiraChoiceMappingNote(suggestion *FieldMappingSuggestion) {
 		(suggestion.WindshiftFieldType != FieldTypeSelect && suggestion.WindshiftFieldType != FieldTypeMultiselect) {
 		return
 	}
-	const note = " Populated option labels will be normalized to stable Windshift option IDs before issue import."
+	const note = " Populated option labels will be normalized to stable Spark option IDs before issue import."
 	suggestion.Notes = strings.TrimSpace(suggestion.Notes + note)
 }
 
@@ -302,7 +302,7 @@ type IssueTypeCandidate struct {
 	Color          string
 }
 
-// PriorityMapping maps common Jira priority names to suggested Windshift equivalents
+// PriorityMapping maps common Jira priority names to suggested Spark equivalents
 var PriorityMapping = map[string]string{
 	"highest":  "Critical",
 	"high":     "High",
@@ -325,7 +325,7 @@ func SuggestPriorityMapping(jiraPriorityName string) string {
 	return "Medium" // Default
 }
 
-// MentionResolver maps a Jira accountID to the Windshift username that should
+// MentionResolver maps a Jira accountID to the Spark username that should
 // be rendered for an `@mention`. Returning "" falls back to the mention's
 // display text.
 type MentionResolver func(accountID string) string
@@ -341,16 +341,16 @@ type MediaResolution struct {
 
 // MediaResolver maps an ADF media node's Jira attachment id (the `attrs.id`
 // Jira surfaces on `media` nodes, which is the same id as the issue's
-// attachment list) to a Windshift Markdown reference for that imported
+// attachment list) to a Spark Markdown reference for that imported
 // attachment. Returning Resolved=false (or "" markdown) leaves the default
 // placeholder.
 type MediaResolver func(jiraAttachmentID string) MediaResolution
 
 // NewMediaResolver builds a MediaResolver from a Jira attachment id →
-// Windshift MediaAttachment map. Images render inline as `![alt](/api/.../download)`;
+// Spark MediaAttachment map. Images render inline as `![alt](/api/.../download)`;
 // everything else renders as a `[name](/api/.../download)` link. An unknown or
 // missing id yields an unresolved result so the caller keeps its placeholder.
-// The reference path is the same relative path Windshift's own attachment
+// The reference path is the same relative path Spark's own attachment
 // upload endpoints document (`/api/attachments/{id}/download`).
 func NewMediaResolver(refs map[string]MediaAttachment) MediaResolver {
 	return func(jiraAttachmentID string) MediaResolution {
@@ -394,7 +394,7 @@ func isImageMimeType(mimeType string) bool {
 
 // ConvertADFToMarkdownWithUsers is the resolver-aware variant. The supplied
 // MentionResolver is consulted for every `mention` node so the output uses
-// Windshift's `@username` syntax — picked up later by MentionService and
+// Spark's `@username` syntax — picked up later by MentionService and
 // by the rendered comment view.
 func ConvertADFToMarkdownWithUsers(adf any, resolver MentionResolver) string {
 	return ConvertADFToMarkdown(adf, resolver, nil)
@@ -402,7 +402,7 @@ func ConvertADFToMarkdownWithUsers(adf any, resolver MentionResolver) string {
 
 // ConvertADFToMarkdown converts an ADF document to Markdown, consulting the
 // optional mention and media resolvers. mentionResolver renders `@mention`
-// nodes as Windshift `@username`s; mediaResolver links `media` nodes to the
+// nodes as Spark `@username`s; mediaResolver links `media` nodes to the
 // imported attachments where possible (otherwise they fall back to a
 // placeholder). Either may be nil.
 func ConvertADFToMarkdown(adf any, mentionResolver MentionResolver, mediaResolver MediaResolver) string {
@@ -525,7 +525,7 @@ func convertADFNode(node any, mentionResolver MentionResolver, mediaResolver Med
 		}
 		display, _ := attrs["text"].(string)
 		display = strings.TrimPrefix(display, "@")
-		// Resolve to a Windshift username when we know who this is. The
+		// Resolve to a Spark username when we know who this is. The
 		// MentionService will pick `@username` up via its regex; unresolved
 		// mentions fall back to the display text so the comment still reads
 		// naturally even when the user wasn't part of the import.

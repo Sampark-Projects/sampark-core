@@ -17,7 +17,7 @@
 
   onMount(async () => {
     // Excalidraw otherwise falls back to esm.sh, which is deliberately blocked
-    // by Windshift's same-origin font CSP.
+    // by Spark's same-origin font CSP.
     configureExcalidrawAssets();
 
     // Dynamically import Excalidraw to avoid SSR issues

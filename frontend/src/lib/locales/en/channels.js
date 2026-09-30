@@ -422,7 +422,7 @@ export default {
     qlQueryRequired: 'QL query is required',
     qlQueryTokenRequired: 'Form-mode QL queries must reference at least one form field using ${field_identifier} tokens',
     qlQueryPlaceholder: 'status = "Active" AND category = "Hardware"',
-    qlQueryHint: 'Filter assets using QL (Windshift Query Language).',
+    qlQueryHint: 'Filter assets using QL (Spark Query Language).',
     qlQueryFormPlaceholder: 'title = ${title} AND status = ${status}',
     qlQueryFormHint: 'Use ${field_identifier} tokens to reference values submitted by the form.',
     runMode: 'Run Mode',

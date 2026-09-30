@@ -18,7 +18,7 @@ export default {
       legacy: 'Устаревший',
     },
     runtimes: {
-      windshift: 'Встроенная среда Windshift',
+      windshift: 'Встроенная среда Spark',
       authorizedRunner: 'Авторизованный runner для разработки',
       legacyLocal: 'Устаревшая локальная среда',
     },

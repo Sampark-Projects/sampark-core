@@ -78,7 +78,7 @@ export default {
       },
       integrationProviders: {
         title: 'Integrations',
-        description: 'Manage outbound integrations Windshift connects to and inbound apps that authorize via OAuth.',
+        description: 'Manage outbound integrations Spark connects to and inbound apps that authorize via OAuth.',
       },
       systemImport: { title: 'System Import', description: 'Import data from external systems' },
       linkTypes: { title: 'Link Types', description: 'Manage link types between items' },
@@ -565,7 +565,7 @@ export default {
       manualUserCreationOnly: 'Manual user creation only',
       trustIdpEmailVerification: 'Link accounts without IdP email verification',
       trustIdpEmailVerificationDesc:
-        'When enabled, identities from this provider are linked to existing Windshift accounts by email even when the provider does not verify the address. When disabled, account linking requires a verified email claim from the provider.',
+        'When enabled, identities from this provider are linked to existing Spark accounts by email even when the provider does not verify the address. When disabled, account linking requires a verified email claim from the provider.',
       idpVerificationNotEnforced: 'Verified email required for account linking',
       unsafeProvisioningWarningTitle: 'Unverified linking enabled',
       unsafeProvisioningWarningBody:
@@ -631,7 +631,7 @@ export default {
     // Email Templates
     emailTemplates: {
       title: 'Email Templates',
-      subtitle: 'Customize the subject and body of transactional emails sent by Windshift.',
+      subtitle: 'Customize the subject and body of transactional emails sent by Spark.',
       loading: 'Loading…',
       empty: 'No email templates found.',
       template: 'Template',
@@ -822,7 +822,7 @@ export default {
         'The plugin system has been disabled via server startup configuration.',
       instanceId: 'Instance ID',
       instanceIdDescription:
-        'Paste this ID in the Windshift portal to issue plugin licenses bound to this installation.',
+        'Paste this ID in the Spark portal to issue plugin licenses bound to this installation.',
       chooseLicense: 'Choose License File',
       changeLicense: 'Change License File',
       licenseSelected: 'License selected: {name}',

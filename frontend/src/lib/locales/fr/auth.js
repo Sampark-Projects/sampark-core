@@ -24,7 +24,7 @@ export default {
     confirmPassword: 'Confirmer le mot de passe',
     passwordRequired: 'Le mot de passe est requis',
     rememberMe: 'Se souvenir de moi',
-    staySignedIn: 'Rester connecté à Windshift pendant 30 jours',
+    staySignedIn: 'Rester connecté à Spark pendant 30 jours',
     emailOrUsername: 'E-mail ou nom d’utilisateur',
     welcomeBack: 'Heureux de vous revoir',
     loginTitle: 'Connectez-vous à votre compte',

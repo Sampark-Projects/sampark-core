@@ -383,7 +383,7 @@
         <AlertBox
           variant="warning"
           message={embed
-            ? 'This form requires a Windshift sign-in and cannot be completed inside an embed.'
+            ? 'This form requires a Spark sign-in and cannot be completed inside an embed.'
             : 'Sign in to continue. Your saved progress will be restored when you return.'}
         />
         <Button

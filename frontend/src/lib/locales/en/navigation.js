@@ -371,11 +371,11 @@ export default {
   },
 
   about: {
-    title: 'About Windshift',
+    title: 'About Spark',
     subtitle: 'A comprehensive work management platform designed for modern teams',
-    whatIs: 'What is Windshift?',
+    whatIs: 'What is Spark?',
     description:
-      "Windshift is a powerful work management application that brings together project tracking, test management, time tracking, and team collaboration in one unified platform. Built with modern technologies and designed for flexibility, it adapts to your team's unique workflow.",
+      "Spark is a powerful work management application that brings together project tracking, test management, time tracking, and team collaboration in one unified platform. Built with modern technologies and designed for flexibility, it adapts to your team's unique workflow.",
     keyFeatures: 'Key Features',
     projectManagement: 'Project Management',
     projectManagementDesc:
@@ -403,7 +403,7 @@ export default {
   },
 
   onboarding: {
-    welcomeTo: 'Welcome to Windshift',
+    welcomeTo: 'Welcome to Spark',
     getStartedMessage: "Let's get you started by creating your first workspace and work item",
     progress: 'Progress',
     completed: 'completed',

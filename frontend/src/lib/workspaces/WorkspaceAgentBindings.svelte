@@ -1000,7 +1000,7 @@
             </button>
           </div>
           <p class="text-xs mb-2" style="color: var(--ds-text-subtle);">
-            These instructions are appended to Windshift's standard operational prompt.
+            These instructions are appended to Spark's standard operational prompt.
           </p>
           {#if standardPromptOpen}
             <div

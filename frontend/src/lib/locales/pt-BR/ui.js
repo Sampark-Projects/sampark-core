@@ -465,8 +465,8 @@ export default {
     },
   },
   footer: {
-    platformName: 'Windshift Plataforma de Gestão de Trabalho',
-    aboutWindshift: 'Sobre o Windshift',
+    platformName: 'Spark Plataforma de Gestão de Trabalho',
+    aboutWindshift: 'Sobre o Spark',
     apiReference: 'Referência da API',
     reportProblem: 'Relatar um problema',
   },

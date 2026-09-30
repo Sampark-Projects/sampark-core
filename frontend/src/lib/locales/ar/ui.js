@@ -466,8 +466,8 @@ export default {
     },
   },
   footer: {
-    platformName: 'منصة ويندشيفت لإدارة العمل',
-    aboutWindshift: 'حول ويندشيفت',
+    platformName: 'منصة سبارك لإدارة العمل',
+    aboutWindshift: 'حول سبارك',
     apiReference: 'مرجع واجهة برمجة التطبيقات',
     reportProblem: 'الإبلاغ عن مشكلة',
   },

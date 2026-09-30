@@ -70,7 +70,7 @@ export default {
         "noCachedModels": "캐시된 모델이 없습니다. 새로고침을 클릭해 {provider}에서 조회하거나 위에 모델 ID를 직접 입력하세요.",
         "selectModel": "모델 선택…",
         "providerConfig": "제공자 설정 JSON",
-        "providerConfigHelp": "제공자 호출에 추가할 최상위 요청 필드입니다. 기존 Windshift 필드가 우선합니다.",
+        "providerConfigHelp": "제공자 호출에 추가할 최상위 요청 필드입니다. 기존 Spark 필드가 우선합니다.",
         "visionSupport": "이미지 인식 지원",
         "visionAuto": "자동(모델에서 감지)",
         "visionOn": "켬(이미지 인식 강제 사용)",
@@ -356,7 +356,7 @@ export default {
     "unavailable": "사용 불가",
     "dataDeleted": "가져온 Jira 데이터를 삭제했습니다. 다시 가져올 수 있습니다.",
     "deleteImportedTitle": "가져온 Jira 데이터 삭제",
-    "deleteWarningTitle": "여러 Windshift 워크스페이스가 삭제될 수 있습니다.",
+    "deleteWarningTitle": "여러 Spark 워크스페이스가 삭제될 수 있습니다.",
     "deleteWarningDescription": "이 Jira 가져오기에 기록된 워크스페이스, 작업, 댓글, 첨부파일, 연결, 마일스톤 및 메타데이터를 모두 삭제합니다. 되돌릴 수 없습니다.",
     "jobId": "가져오기 작업 ID",
     "importedScope": "가져온 데이터",
@@ -564,7 +564,7 @@ export default {
     "centralizedUsersDescription": "워크스페이스 관리자가 코딩 에이전트 실행을 승인된 중앙 서비스 계정에 연결하도록 허용합니다.",
     "centralizedUsersWarning": "모든 연결은 감사 로그에 기록됩니다. 공유 자동화를 위한 계정만 승인하세요.",
     "authenticationPolicy": "로그인 정책",
-    "authenticationPolicyDescription": "Windshift 사용자 인증 방식을 선택하세요.",
+    "authenticationPolicyDescription": "Spark 사용자 인증 방식을 선택하세요.",
     "authenticationMethod": "로그인 방식",
     "previewMode": "미리보기 모드",
     "previewModeDescription": "로그인을 차단하지 않고 정책 경고만 표시합니다.",
@@ -687,8 +687,8 @@ export default {
     "directions": {
       "outbound": "발신",
       "inbound": "수신",
-      "outboundDescription": "Windshift가 연결하는 앱입니다. Notion, Confluence 등 외부 서비스의 데이터를 읽는 데 사용할 OAuth 인증 정보를 추가하세요.",
-      "inboundDescription": "사용자를 대신하여 Windshift에 연결하는 앱입니다. 외부 앱을 한 번 등록하면 사용자가 OAuth 2.0 및 PKCE로 접근을 승인할 수 있습니다."
+      "outboundDescription": "Spark가 연결하는 앱입니다. Notion, Confluence 등 외부 서비스의 데이터를 읽는 데 사용할 OAuth 인증 정보를 추가하세요.",
+      "inboundDescription": "사용자를 대신하여 Spark에 연결하는 앱입니다. 외부 앱을 한 번 등록하면 사용자가 OAuth 2.0 및 PKCE로 접근을 승인할 수 있습니다."
     },
     "providers": {
       "loadFailed": "연동 제공자를 불러오지 못했습니다",
@@ -705,7 +705,7 @@ export default {
     },
     "oauthClients": {
       "title": "OAuth 클라이언트",
-      "subtitle": "OAuth 2.0 및 PKCE로 Windshift 사용자의 승인을 받고 사용자별 API 토큰을 발급할 수 있는 외부 앱을 등록합니다.",
+      "subtitle": "OAuth 2.0 및 PKCE로 Spark 사용자의 승인을 받고 사용자별 API 토큰을 발급할 수 있는 외부 앱을 등록합니다.",
       "template": "템플릿",
       "oauthCallback": "OAuth 콜백",
       "registerClient": "클라이언트 등록",
@@ -722,7 +722,7 @@ export default {
       "deleteMessage": "이 클라이언트에 발급된 모든 액세스 토큰과 갱신 토큰이 즉시 폐기됩니다. 연결된 사용자는 다시 연결해야 합니다.",
       "deleted": "OAuth 클라이언트를 삭제했습니다",
       "deleteFailed": "OAuth 클라이언트를 삭제하지 못했습니다",
-      "scopeHelp": "발급되는 액세스 토큰은 사용자별 Windshift API 토큰입니다. 요청한 사용자의 권한을 상속하며 여기에서 선택한 범위로 제한됩니다.",
+      "scopeHelp": "발급되는 액세스 토큰은 사용자별 Spark API 토큰입니다. 요청한 사용자의 권한을 상속하며 여기에서 선택한 범위로 제한됩니다.",
       "scopeCount": "권한 범위: {count}개",
       "redirectCount": "리디렉션 URI: {count}개",
       "clientId": "클라이언트 ID",
@@ -745,7 +745,7 @@ export default {
       "allowedScopes": "허용된 권한 범위",
       "register": "등록",
       "copySecretNow": "지금 시크릿을 복사하세요",
-      "secretWarning": "클라이언트 시크릿은 한 번만 표시됩니다. Windshift는 bcrypt 해시만 저장하므로 이 창을 닫기 전에 복사하세요. 분실하면 시크릿을 교체하세요."
+      "secretWarning": "클라이언트 시크릿은 한 번만 표시됩니다. Spark는 bcrypt 해시만 저장하므로 이 창을 닫기 전에 복사하세요. 분실하면 시크릿을 교체하세요."
     }
   }
 };

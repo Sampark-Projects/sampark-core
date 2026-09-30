@@ -381,10 +381,10 @@ export default {
     workspace: 'Workspace',
   },
   about: {
-    title: 'Über Windshift',
+    title: 'Über Spark',
     subtitle: 'Eine umfassende Arbeitsmanagement-Plattform für moderne Teams',
-    whatIs: 'Was ist Windshift?',
-    description: 'Windshift ist eine leistungsstarke Arbeitsmanagement-Anwendung, die Projektverfolgung, Testmanagement, Zeiterfassung und Team-Zusammenarbeit in einer einheitlichen Plattform vereint. Mit modernen Technologien entwickelt und auf Flexibilität ausgelegt, passt sie sich dem individuellen Workflow Ihres Teams an.',
+    whatIs: 'Was ist Spark?',
+    description: 'Spark ist eine leistungsstarke Arbeitsmanagement-Anwendung, die Projektverfolgung, Testmanagement, Zeiterfassung und Team-Zusammenarbeit in einer einheitlichen Plattform vereint. Mit modernen Technologien entwickelt und auf Flexibilität ausgelegt, passt sie sich dem individuellen Workflow Ihres Teams an.',
     keyFeatures: 'Hauptfunktionen',
     projectManagement: 'Projektmanagement',
     projectManagementDesc: 'Organisieren Sie Vorgänge hierarchisch mit benutzerdefinierten Feldern, Workflows und Statusverfolgung.',
@@ -408,7 +408,7 @@ export default {
     getStarted: 'Loslegen',
   },
   onboarding: {
-    welcomeTo: 'Willkommen bei Windshift',
+    welcomeTo: 'Willkommen bei Spark',
     getStartedMessage: 'Lassen Sie uns mit der Erstellung Ihres ersten Arbeitsbereichs und Vorgangs beginnen',
     progress: 'Fortschritt',
     completed: 'abgeschlossen',

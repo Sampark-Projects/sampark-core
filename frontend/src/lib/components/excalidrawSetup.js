@@ -18,7 +18,7 @@ export function prepareExcalidrawInitialData(initialData) {
   const scene = initialData || {};
   const appState = { ...(scene.appState || {}) };
 
-  // Older Windshift builds forced Excalidraw's backing canvas to the same
+  // Older Spark builds forced Excalidraw's backing canvas to the same
   // dark color as its default stroke. Excalidraw applies dark mode by
   // inverting the complete canvas, so those identical colors stayed
   // identical and newly drawn shapes were invisible.

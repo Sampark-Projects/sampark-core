@@ -255,7 +255,7 @@
       style="background-color: var(--ds-surface-raised); border-color: var(--ds-border);"
     >
       <div class="mx-auto max-w-6xl px-4 py-4 text-center sm:px-6">
-        <p class="text-xs" style="color: var(--ds-text-subtle);">Powered by Windshift</p>
+        <p class="text-xs" style="color: var(--ds-text-subtle);">Powered by Spark</p>
       </div>
     </footer>
   {/if}

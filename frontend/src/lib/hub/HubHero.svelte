@@ -49,7 +49,7 @@
   }
 </script>
 
-<!-- Hero Section with Gradient. Falls back to the Windshift brand gradient
+<!-- Hero Section with Gradient. Falls back to the Spark brand gradient
      when the configured option resolves to null (the "None" picker entry,
      or an unset/legacy config). A null background would leave the white
      foreground buttons invisible. -->

@@ -1,5 +1,5 @@
 /**
- * Miscellaneous locale strings for Windshift
+ * Miscellaneous locale strings for Spark
  * Contains: iterations, milestones, assets, personal, connections,
  * migration, migrationAssistant, setup, createModal, scm, organization,
  * fields, itemTypes, categories, members, configuration, audit, auditLog, projects
@@ -76,13 +76,13 @@ export default {
     },
     mapping: {
       workspaces: 'Workspaces',
-      workspacesDesc: 'Each Jira project will become a Windshift workspace',
+      workspacesDesc: 'Each Jira project will become a Spark workspace',
       issueTypes: 'Issue Types',
-      issueTypesDesc: 'Issue types will be created as item types in Windshift',
+      issueTypesDesc: 'Issue types will be created as item types in Spark',
       statuses: 'Statuses',
       statusesDesc: 'Statuses will be created and grouped by category',
       customFields: 'Custom Fields',
-      customFieldsDesc: 'Custom fields that can be mapped will be created in Windshift',
+      customFieldsDesc: 'Custom fields that can be mapped will be created in Spark',
       versions: 'Versions / Milestones',
       versionsDesc: 'Jira versions will be imported as workspace milestones.',
       subtask: 'Sub-task',

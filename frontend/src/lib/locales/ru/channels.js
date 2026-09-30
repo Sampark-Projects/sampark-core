@@ -395,7 +395,7 @@ export default {
     qlQueryRequired: 'Введите запрос QL',
     qlQueryTokenRequired: 'QL-запросы в режиме формы должны ссылаться хотя бы на одно поле формы через токены ${field_identifier}',
     qlQueryPlaceholder: 'status = "Active" AND category = "Hardware"',
-    qlQueryHint: 'Фильтруйте ресурсы с помощью QL (Windshift Query Language).',
+    qlQueryHint: 'Фильтруйте ресурсы с помощью QL (Spark Query Language).',
     qlQueryFormPlaceholder: 'title = ${title} AND status = ${status}',
     qlQueryFormHint: 'Используйте токены ${field_identifier} для значений, отправленных через форму.',
     runMode: 'Режим запуска',

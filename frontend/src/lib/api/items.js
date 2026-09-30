@@ -28,7 +28,7 @@ function itemListQuery(/** @type {Record<string, any>} */ filters = {}) {
 
 /**
  * Wrap a mutating items API method so a successful call broadcasts a
- * cross-tab freshness notice to other open Windshift tabs. Failures are
+ * cross-tab freshness notice to other open Spark tabs. Failures are
  * surfaced unchanged (the original promise rejects) and never broadcast.
  *
  * @template {(...args: any[]) => Promise<any>} F

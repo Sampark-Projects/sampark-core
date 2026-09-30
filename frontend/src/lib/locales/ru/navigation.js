@@ -361,11 +361,11 @@ export default {
   },
 
   about: {
-    title: 'О Windshift',
+    title: 'О Spark',
     subtitle: 'Управление проектами, тестированием и работой команды в одном месте',
-    whatIs: 'Что такое Windshift?',
+    whatIs: 'Что такое Spark?',
     description:
-      'Windshift объединяет проекты, тестирование, учёт времени и совместную работу. Интерфейс и процессы можно настроить под вашу команду.',
+      'Spark объединяет проекты, тестирование, учёт времени и совместную работу. Интерфейс и процессы можно настроить под вашу команду.',
     keyFeatures: 'Основные возможности',
     projectManagement: 'Управление проектами',
     projectManagementDesc:
@@ -393,7 +393,7 @@ export default {
   },
 
   onboarding: {
-    welcomeTo: 'Добро пожаловать в Windshift',
+    welcomeTo: 'Добро пожаловать в Spark',
     getStartedMessage: 'Для начала создайте первое рабочее пространство и рабочий элемент',
     progress: 'Ход выполнения',
     completed: 'выполнено',

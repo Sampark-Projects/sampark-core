@@ -53,7 +53,7 @@ func writeSandboxWSConfig(root string, env map[string]string) error {
 	}
 
 	var content strings.Builder
-	content.WriteString("# Managed by the Windshift agent sandbox.\n[server]\nurl = ")
+	content.WriteString("# Managed by the Spark agent sandbox.\n[server]\nurl = ")
 	content.WriteString(strconv.Quote(trustedURL))
 	content.WriteByte('\n')
 	if workspace := env["WS_WORKSPACE_KEY"]; workspace != "" {

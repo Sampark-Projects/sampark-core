@@ -64,7 +64,7 @@
   const workspace = {
     id: 1,
     key: 'WIND',
-    name: 'Windshift',
+    name: 'Spark',
     description: 'Product planning and delivery',
     color: 'var(--ds-interactive)',
     icon: 'Package',
@@ -369,7 +369,7 @@
   <div class="mx-auto max-w-4xl">
     <div class="mb-8">
       <ViewHeader
-        workspaceName="Windshift"
+        workspaceName="Spark"
         collection="Composition examples"
         viewName="Form patterns"
       />

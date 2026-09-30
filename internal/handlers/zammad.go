@@ -247,7 +247,7 @@ func (h *ZammadHandler) GetItemLinks(w http.ResponseWriter, r *http.Request) {
 }
 
 // ResolveTicketLink turns the opaque correlation key stored in Zammad into a
-// current Windshift item destination. Item permissions are checked before the
+// current Spark item destination. Item permissions are checked before the
 // destination is disclosed so the link cannot be used to enumerate items.
 func (h *ZammadHandler) ResolveTicketLink(w http.ResponseWriter, r *http.Request) {
 	user, ok := RequireAuth(w, r)
@@ -430,7 +430,7 @@ func (h *ZammadHandler) respondServiceError(w http.ResponseWriter, r *http.Reque
 		case errors.As(err, &apiErr) || errors.As(err, &upstreamErr):
 			respondError(w, r, restapi.NewAPIError(http.StatusBadGateway, "ZAMMAD_UPSTREAM_ERROR", "Zammad could not complete the request"))
 		case errors.As(err, &transitionErr):
-			respondBadRequest(w, r, "The configured Windshift completion transition is not currently allowed")
+			respondBadRequest(w, r, "The configured Spark completion transition is not currently allowed")
 		default:
 			respondInternalError(w, r, err)
 		}

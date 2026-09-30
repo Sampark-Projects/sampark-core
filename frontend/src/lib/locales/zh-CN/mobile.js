@@ -49,8 +49,8 @@ export default {
       send: '发送',
     },
     notifications: {
-      installRequired: '将 Windshift 添加到主屏幕以启用推送通知。',
-      blocked: '通知已被阻止。请在设备设置中为 Windshift 启用通知。',
+      installRequired: '将 Spark 添加到主屏幕以启用推送通知。',
+      blocked: '通知已被阻止。请在设备设置中为 Spark 启用通知。',
       enabled: '通知已开启',
       enable: '开启通知',
       caughtUp: '全部处理完毕',
@@ -68,11 +68,11 @@ export default {
     },
     install: {
       title: '添加到主屏幕',
-      description: '将 Windshift 安装为应用，即可全屏启动并接收推送通知。',
+      description: '将 Spark 安装为应用，即可全屏启动并接收推送通知。',
       openSafari: '在 Safari 中打开此页面（不要在其他应用内打开）。',
       share: '点按工具栏中的“分享”按钮。',
       addToHome: '选择“添加到主屏幕”。',
-      launch: '点按“添加”，然后从新图标打开 Windshift。',
+      launch: '点按“添加”，然后从新图标打开 Spark。',
       dismiss: '知道了',
     },
     pages: {

@@ -39,7 +39,7 @@ function parseDatasetJSON(value, fallback = {}) {
   try {
     return JSON.parse(value);
   } catch (err) {
-    console.warn('[Windshift Forms] Ignoring invalid JSON data attribute:', err);
+    console.warn('[Spark Forms] Ignoring invalid JSON data attribute:', err);
     return fallback;
   }
 }
@@ -65,7 +65,7 @@ function createMountTarget(element) {
 export function mountComponent(element, componentName, props = {}) {
   const Component = components[componentName];
   if (!Component) {
-    throw new Error(`Unknown Windshift Forms component: ${componentName}`);
+    throw new Error(`Unknown Spark Forms component: ${componentName}`);
   }
 
   const { shadowRoot, target } = createMountTarget(element);
@@ -116,7 +116,7 @@ function autoMountFromScript(script) {
   const run = () => {
     const target = document.getElementById(targetId);
     if (!target) {
-      console.error(`[Windshift Forms] Target element not found: #${targetId}`);
+      console.error(`[Spark Forms] Target element not found: #${targetId}`);
       return;
     }
 

@@ -563,7 +563,7 @@ export default {
       autoProvisionUsersDesc: 'إنشاء حسابات المستخدمين تلقائياً عند أول تسجيل دخول عبر SSO',
       manualUserCreationOnly: 'إنشاء المستخدمين يدوياً فقط',
       trustIdpEmailVerification: 'ربط الحسابات دون تحقق المزود من البريد الإلكتروني',
-      trustIdpEmailVerificationDesc: 'عند التفعيل، يتم ربط هويات هذا الموفر بحسابات Windshift موجودة عبر البريد الإلكتروني حتى عندما لا يتحقق الموفر من العنوان. عند التعطيل، يتطلب الربط بريدًا إلكترونيًا مُتحققًا من الموفر.',
+      trustIdpEmailVerificationDesc: 'عند التفعيل، يتم ربط هويات هذا الموفر بحسابات Spark موجودة عبر البريد الإلكتروني حتى عندما لا يتحقق الموفر من العنوان. عند التعطيل، يتطلب الربط بريدًا إلكترونيًا مُتحققًا من الموفر.',
       idpVerificationNotEnforced: 'البريد الإلكتروني المُتحقق منه مطلوب لربط الحسابات',
       unsafeProvisioningWarningTitle: 'تم تفعيل الربط دون تحقق من البريد',
       unsafeProvisioningWarningBody:
@@ -617,7 +617,7 @@ export default {
     },
     emailTemplates: {
       title: 'Email Templates',
-      subtitle: 'Customize the subject and body of transactional emails sent by Windshift.',
+      subtitle: 'Customize the subject and body of transactional emails sent by Spark.',
       loading: 'Loading…',
       empty: 'No email templates found.',
       template: 'Template',

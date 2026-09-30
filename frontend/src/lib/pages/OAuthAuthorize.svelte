@@ -149,7 +149,7 @@
 		loading={working}
 	>
 		{#snippet subtitleSnippet()}
-			<strong>{info.client_display_name}</strong> wants to act on your behalf in Windshift.
+			<strong>{info.client_display_name}</strong> wants to act on your behalf in Spark.
 		{/snippet}
 		<div
 			class="rounded-md border p-4"
@@ -174,7 +174,7 @@
 				After you approve
 			</div>
 			<p class="text-sm" style="color: var(--ds-text);">
-				Windshift will create a dedicated agent for this app and issue API tokens it can use to call Windshift on your behalf only. Other users must authorize the app with their own Windshift accounts. You can revoke your access any time from your profile's Agents tab.
+				Spark will create a dedicated agent for this app and issue API tokens it can use to call Spark on your behalf only. Other users must authorize the app with their own Spark accounts. You can revoke your access any time from your profile's Agents tab.
 			</p>
 			<p class="text-xs mt-2" style="color: var(--ds-text-subtle);">
 				Browser will redirect to: <code class="break-all">{info.redirect_uri}</code>

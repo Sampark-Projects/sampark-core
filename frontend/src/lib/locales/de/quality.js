@@ -98,7 +98,7 @@ export default {
       "datacenter": "Arbeitselemente aus Jira Data Center importieren"
     },
     "mapping": {
-      "issueTypesDesc": "Arbeitselementtypen werden als Eintragstypen in Windshift erstellt",
+      "issueTypesDesc": "Arbeitselementtypen werden als Eintragstypen in Spark erstellt",
       "versionsDesc": "Jira-Versionen werden als Arbeitsbereich-Meilensteine importiert."
     },
     "preview": {
@@ -427,7 +427,7 @@ export default {
   "issueSync": {
     "subtitle": "GitHub Issues als Arbeitselemente in diesen Arbeitsbereich synchronisieren",
     "noConfig": "Die Issue-Synchronisierung ist für diesen Arbeitsbereich nicht konfiguriert.",
-    "noConfigDescription": "Verknüpfen Sie ein Repository und konfigurieren Sie, wie GitHub Issues in Windshift-Arbeitselemente synchronisiert werden sollen.",
+    "noConfigDescription": "Verknüpfen Sie ein Repository und konfigurieren Sie, wie GitHub Issues in Spark-Arbeitselemente synchronisiert werden sollen.",
     "enabledDescription": "Wenn aktiviert, werden GitHub Issues regelmäßig in diesen Arbeitsbereich synchronisiert.",
     "itemType": "Arbeitselementtyp",
     "itemTypeDescription": "Wählen Sie den Arbeitselementtyp für synchronisierte Issues. Dies bestimmt, welche Workflow-Status für die Zuordnung verfügbar sind.",

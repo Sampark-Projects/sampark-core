@@ -151,7 +151,7 @@ const defaultNotificationChannelConfig = `{
 	"smtp_username": "",
 	"smtp_password": "",
 	"smtp_from_email": "",
-	"smtp_from_name": "Windshift",
+	"smtp_from_name": "Spark",
 	"smtp_encryption": "tls"
 }`
 

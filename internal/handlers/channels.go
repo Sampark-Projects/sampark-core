@@ -847,7 +847,7 @@ func (h *ChannelHandler) testSMTPChannelWithEmail(channel models.Channel, testEm
 	}
 
 	// Create a test email
-	subject := "Windshift SMTP Test Email"
+	subject := "Spark SMTP Test Email"
 	htmlBody, textBody := buildSMTPTestEmailBodies(channel.Name, time.Now())
 
 	// Check if SMTP sender is configured
@@ -883,7 +883,7 @@ func buildSMTPTestEmailBodies(channelName string, testTime time.Time) (htmlBody,
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Windshift SMTP Test</title>
+	<title>Spark SMTP Test</title>
 	<style>
 		body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 20px; background-color: #f5f5f5; }
 		.container { max-width: 600px; margin: 0 auto; background-color: white; border-radius: 8px; padding: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
@@ -895,13 +895,13 @@ func buildSMTPTestEmailBodies(channelName string, testTime time.Time) (htmlBody,
 <body>
 	<div class="container">
 		<div class="header">
-			<h1>Windshift SMTP Test</h1>
+			<h1>Spark SMTP Test</h1>
 		</div>
 		<div class="content">
 			<div class="success">
 				<strong>Success!</strong> Your SMTP configuration is working correctly.
 			</div>
-			<p>This test email was sent from Windshift to verify your SMTP settings.</p>
+			<p>This test email was sent from Spark to verify your SMTP settings.</p>
 			<p><strong>Channel:</strong> ` + htmlChannelName + `</p>
 			<p><strong>Test Time:</strong> ` + testTime.Format("January 2, 2006 at 3:04 PM MST") + `</p>
 			<p>If you received this email, your SMTP configuration is ready to send notifications.</p>
@@ -910,11 +910,11 @@ func buildSMTPTestEmailBodies(channelName string, testTime time.Time) (htmlBody,
 </body>
 </html>`
 
-	textBody = `Windshift SMTP Test Email
+	textBody = `Spark SMTP Test Email
 
 Success! Your SMTP configuration is working correctly.
 
-This test email was sent from Windshift to verify your SMTP settings.
+This test email was sent from Spark to verify your SMTP settings.
 
 Channel: ` + channelName + `
 Test Time: ` + testTime.Format("January 2, 2006 at 3:04 PM MST") + `

@@ -441,7 +441,7 @@
 <!-- Global keydown listener for ESC key -->
 <svelte:window onkeydown={handleKeydown} />
 
-<!-- Portal Page - Standalone, no Windshift navigation -->
+<!-- Portal Page - Standalone, no Spark navigation -->
 <div
   class="min-h-screen flex flex-col"
   style="background-color: var(--ds-surface, #ffffff);"

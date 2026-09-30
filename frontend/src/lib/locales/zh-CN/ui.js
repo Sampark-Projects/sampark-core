@@ -401,8 +401,8 @@ export default {
   },
 
   footer: {
-    platformName: 'Windshift 工作管理平台',
-    aboutWindshift: '关于 Windshift',
+    platformName: 'Spark 工作管理平台',
+    aboutWindshift: '关于 Spark',
     apiReference: 'API 参考',
     reportProblem: '报告问题',
   },

@@ -62,7 +62,7 @@
       Primary Brand Palette
     </h2>
     <p class="mb-4 text-sm" style="color: var(--ds-text-subtle);">
-      Based on Windshift brand color #2874BB
+      Based on Spark brand color #2874BB
     </p>
     <div class="grid grid-cols-5 md:grid-cols-10 gap-2">
       {#each primaryShades as shade}

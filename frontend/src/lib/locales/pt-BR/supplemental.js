@@ -73,7 +73,7 @@ export default {
       },
       "integrationProviders": {
         "title": "Integrações",
-        "description": "Gerencie integrações de saída O Windshift se conecta a aplicativos de entrada que autorizam via OAuth."
+        "description": "Gerencie integrações de saída O Spark se conecta a aplicativos de entrada que autorizam via OAuth."
       },
       "diagnostics": {
         "description": "Integridade do sistema: relógio do servidor, falhas de ação e outros sinais operacionais"
@@ -86,7 +86,7 @@ export default {
       "githubAppId": "ID do aplicativo GitHub"
     },
     "emailTemplates": {
-      "subtitle": "Personalize o assunto e o corpo dos e-mails transacionais enviados pelo Windshift.",
+      "subtitle": "Personalize o assunto e o corpo dos e-mails transacionais enviados pelo Spark.",
       "empty": "Nenhum modelo de email encontrado.",
       "adminNotes": "Descrição (notas de administração)",
       "activeHint": "Ativo (desmarque para voltar ao padrão integrado)",
@@ -195,7 +195,7 @@ export default {
     "qlQueryRequired": "A consulta QL é necessária",
     "qlQueryTokenRequired": "As consultas QL no modo de formulário devem fazer referência a pelo menos um campo de formulário usando tokens ${field_identifier}",
     "qlQueryPlaceholder": "status = \"Active\" AND category = \"Hardware\"",
-    "qlQueryHint": "Filtrar ativos usando QL (Linguagem de consulta Windshift).",
+    "qlQueryHint": "Filtrar ativos usando QL (Linguagem de consulta Spark).",
     "qlQueryFormPlaceholder": "title = ${title} AND status = ${status}",
     "qlQueryFormHint": "Use tokens ${field_identifier} para referenciar valores enviados pelo formulário.",
     "runMode": "Modo de execução",

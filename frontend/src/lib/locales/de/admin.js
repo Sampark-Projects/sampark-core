@@ -567,7 +567,7 @@ export default {
       autoProvisionUsersDesc: 'Benutzerkonten automatisch bei erster SSO-Anmeldung erstellen',
       manualUserCreationOnly: 'Nur manuelle Benutzererstellung',
       trustIdpEmailVerification: 'Konten auch ohne IdP-E-Mail-Verifizierung verknüpfen',
-      trustIdpEmailVerificationDesc: 'Wenn aktiviert, werden Identitäten dieses Anbieters auch dann per E-Mail mit bestehenden Windshift-Konten verknüpft, wenn der Anbieter die Adresse nicht verifiziert. Wenn deaktiviert, erfordert die Verknüpfung eine vom Anbieter verifizierte E-Mail.',
+      trustIdpEmailVerificationDesc: 'Wenn aktiviert, werden Identitäten dieses Anbieters auch dann per E-Mail mit bestehenden Spark-Konten verknüpft, wenn der Anbieter die Adresse nicht verifiziert. Wenn deaktiviert, erfordert die Verknüpfung eine vom Anbieter verifizierte E-Mail.',
       idpVerificationNotEnforced: 'Verifizierte E-Mail für Kontoverknüpfung erforderlich',
       unsafeProvisioningWarningTitle: 'Verknüpfung ohne Verifizierung aktiviert',
       unsafeProvisioningWarningBody:
@@ -621,7 +621,7 @@ export default {
     },
     emailTemplates: {
       title: 'E-Mail-Vorlagen',
-      subtitle: 'Betreff und Inhalt der von Windshift versendeten Transaktions-E-Mails anpassen.',
+      subtitle: 'Betreff und Inhalt der von Spark versendeten Transaktions-E-Mails anpassen.',
       loading: 'Wird geladen…',
       empty: 'Keine E-Mail-Vorlagen gefunden.',
       template: 'Vorlage',
@@ -800,7 +800,7 @@ export default {
       pluginsDisabledMessage: 'Das Plugin-System wurde über die Server-Startkonfiguration deaktiviert.',
       instanceId: 'Instanz-ID',
       instanceIdDescription:
-        'Geben Sie diese ID im Windshift-Portal ein, um Plugin-Lizenzen für diese Installation zu erhalten.',
+        'Geben Sie diese ID im Spark-Portal ein, um Plugin-Lizenzen für diese Installation zu erhalten.',
       chooseLicense: 'Lizenzdatei auswählen',
       changeLicense: 'Lizenzdatei ändern',
       licenseSelected: 'Lizenz ausgewählt: {name}',

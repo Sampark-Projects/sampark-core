@@ -1109,7 +1109,7 @@ func renderInstruction(trigger *models.RunTrigger) string {
 	var b strings.Builder
 	b.WriteString("\n\n## Your instruction for this run\n")
 	if trigger.Kind == "pr_comment" {
-		fmt.Fprintf(&b, "A reviewer asked you to continue pull request #%d in %s. The workspace is already checked out on that PR's existing head branch; commit the requested changes there and do not create another branch or pull request. Treat the review request below as your primary instruction. When it is terse, inspect the current diff and read the linked Windshift item (`ws task get $WINDSHIFT_ITEM_ID`) for context.\n\n", trigger.ContinuePRNumber, trigger.ContinueRepoSlug)
+		fmt.Fprintf(&b, "A reviewer asked you to continue pull request #%d in %s. The workspace is already checked out on that PR's existing head branch; commit the requested changes there and do not create another branch or pull request. Treat the review request below as your primary instruction. When it is terse, inspect the current diff and read the linked Spark item (`ws task get $WINDSHIFT_ITEM_ID`) for context.\n\n", trigger.ContinuePRNumber, trigger.ContinueRepoSlug)
 	} else {
 		b.WriteString("A user mentioned you in a comment on $WINDSHIFT_ITEM_ID. Treat the comment below as your primary instruction for what to do on this run — it takes precedence over any default assumption about the task. It may be terse; when it lacks detail, read the work item and its other comments (`ws task get $WINDSHIFT_ITEM_ID`, `ws comment list $WINDSHIFT_ITEM_ID`) for the surrounding context before acting.\n\n")
 	}
@@ -1501,7 +1501,7 @@ func (s *BindingService) StartPRCommentContinuationDetailed(ctx context.Context,
 		return PRCommentStartResult{Terminal: true, Reason: "The coding-agent runner is not available."}, nil
 	}
 	if in.HeadBranch == "" || in.ItemID == 0 {
-		return PRCommentStartResult{Terminal: true, Reason: "This PR is not linked to a continuable Windshift item."}, nil
+		return PRCommentStartResult{Terminal: true, Reason: "This PR is not linked to a continuable Spark item."}, nil
 	}
 	if in.HeadRepo != "" && !strings.EqualFold(in.HeadRepo, in.RepoSlug) {
 		return PRCommentStartResult{Terminal: true, Reason: "The coding agent cannot update this fork PR because its head repository is not bound for push access."}, nil

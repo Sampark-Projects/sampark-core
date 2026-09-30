@@ -77,7 +77,7 @@ func NewConfig(opts Options) (*Config, error) {
 	}
 
 	// Dev-mode RPID override: production-mode RPID/RPName are pre-resolved by
-	// config.Load (env → hostname fallback for RPID, default "Windshift" for
+	// config.Load (env → hostname fallback for RPID, default "Spark" for
 	// RPName), so this package no longer reads env vars itself.
 	if c.RPID == "" && c.isDevelopment {
 		c.RPID = "localhost"
@@ -86,7 +86,7 @@ func NewConfig(opts Options) (*Config, error) {
 		return nil, fmt.Errorf("no RP ID provided and not in development mode (config.Load should have resolved this)")
 	}
 	if c.RPName == "" {
-		c.RPName = "Windshift"
+		c.RPName = "Spark"
 	}
 	if err := protocol.ValidateRPID(c.RPID); err != nil {
 		return nil, &InvalidRPIDError{RPID: c.RPID, Err: err}

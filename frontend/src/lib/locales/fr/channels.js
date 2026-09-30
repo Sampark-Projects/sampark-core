@@ -398,7 +398,7 @@ export default {
     // biome-ignore lint/suspicious/noTemplateCurlyInString: QL tokens are displayed literally.
     qlQueryTokenRequired: 'Les requêtes QL en mode formulaire doivent faire référence à au moins un champ du formulaire à l’aide de jetons ${field_identifier}',
     qlQueryPlaceholder: 'status = "Active" AND category = "Hardware"',
-    qlQueryHint: 'Filtrer les actifs à l’aide du langage QL (Windshift Query Language).',
+    qlQueryHint: 'Filtrer les actifs à l’aide du langage QL (Spark Query Language).',
     // biome-ignore lint/suspicious/noTemplateCurlyInString: QL tokens are displayed literally.
     qlQueryFormPlaceholder: 'title = ${title} AND status = ${status}',
     // biome-ignore lint/suspicious/noTemplateCurlyInString: QL tokens are displayed literally.

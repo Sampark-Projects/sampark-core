@@ -93,7 +93,7 @@ export default {
       integrationProviders: {
         title: 'Интеграции',
         description:
-          'Подключение внешних сервисов и OAuth-приложений к Windshift',
+          'Подключение внешних сервисов и OAuth-приложений к Spark',
       },
       systemImport: {
         title: 'Импорт данных',
@@ -197,7 +197,7 @@ export default {
       pathWritable: 'Путь доступен для записи',
       pathStatusUnknown: 'Состояние пути неизвестно',
       enableNote:
-        'Чтобы включить вложения, перезапустите сервер Windshift с параметром --attachment-path.',
+        'Чтобы включить вложения, перезапустите сервер Spark с параметром --attachment-path.',
       enableExample: 'Пример: ./windshift --attachment-path /path/to/attachments',
       generalSettings: 'Общие настройки',
       enableAttachments: 'Включить вложения',
@@ -616,7 +616,7 @@ export default {
       manualUserCreationOnly: 'Только ручное создание пользователей',
       trustIdpEmailVerification: 'Связывать учётные записи без проверки почты в IdP',
       trustIdpEmailVerificationDesc:
-        'Если включено, идентификаторы этого провайдера привязываются по адресу электронной почты к существующим учётным записям Windshift, даже если провайдер не подтверждает адрес. Если выключено, для привязки требуется подтверждённый провайдером адрес.',
+        'Если включено, идентификаторы этого провайдера привязываются по адресу электронной почты к существующим учётным записям Spark, даже если провайдер не подтверждает адрес. Если выключено, для привязки требуется подтверждённый провайдером адрес.',
       idpVerificationNotEnforced: 'Для привязки учётных записей требуется подтверждённая почта',
       unsafeProvisioningWarningTitle: 'Включена привязка без подтверждения почты',
       unsafeProvisioningWarningBody:
@@ -680,7 +680,7 @@ export default {
 
     emailTemplates: {
       title: 'Шаблоны писем',
-      subtitle: 'Настройте тему и текст транзакционных писем Windshift.',
+      subtitle: 'Настройте тему и текст транзакционных писем Spark.',
       loading: 'Загрузка…',
       empty: 'Шаблоны писем не найдены.',
       template: 'Шаблон',
@@ -865,7 +865,7 @@ export default {
       plugins: 'Плагины',
       pluginsDisabledMessage:
         'Система плагинов отключена в конфигурации запуска сервера.',
-      instanceId: 'ID инстанса', instanceIdDescription: 'Укажите этот ID в портале Windshift, чтобы получить лицензии на плагины для этой установки.', chooseLicense: 'Выбрать файл лицензии', changeLicense: 'Изменить файл лицензии', licenseSelected: 'Выбрана лицензия: {name}', licenseOptional: 'Необязательно: приложите файл лицензии, выданный для этой установки.', uploadPlugin: 'Загрузить плагин',
+      instanceId: 'ID инстанса', instanceIdDescription: 'Укажите этот ID в портале Spark, чтобы получить лицензии на плагины для этой установки.', chooseLicense: 'Выбрать файл лицензии', changeLicense: 'Изменить файл лицензии', licenseSelected: 'Выбрана лицензия: {name}', licenseOptional: 'Необязательно: приложите файл лицензии, выданный для этой установки.', uploadPlugin: 'Загрузить плагин',
       dropOrSelect: 'Перетащите сюда файлы плагина или нажмите, чтобы выбрать их',
       supportedFormats: 'Поддерживаемые форматы: .zip и .wasm',
       installedPlugins: 'Установленные плагины',

@@ -43,15 +43,15 @@
     onclick={(e) => e.stopPropagation()}
   >
     <div class="flex items-center justify-between border-b px-6 py-4" style="border-color: var(--ds-border);">
-      <h2 id="desktop-about-title" class="text-lg font-semibold">About Windshift</h2>
+      <h2 id="desktop-about-title" class="text-lg font-semibold">About Spark</h2>
       <Button variant="ghost" icon={X} onclick={close} title={t('common.close')} />
     </div>
 
     <div class="px-6 py-6">
       <div class="flex items-center gap-4">
-        <img src="windshift-3.svg" alt="" class="h-14 w-14 shrink-0" />
+        <img src="spark-logo.png" alt="" class="h-14 w-14 shrink-0" />
         <div class="min-w-0">
-          <div class="text-xl font-semibold">Windshift</div>
+          <div class="text-xl font-semibold">Spark</div>
           <div class="text-sm" style="color: var(--ds-text-subtle);">Desktop workspace companion</div>
         </div>
       </div>
@@ -64,7 +64,7 @@
         <dd>{shellVersion ?? 'Loading...'}</dd>
 
         <dt style="color: var(--ds-text-subtle);">Copyright</dt>
-        <dd>Copyright 2026 Windshift</dd>
+        <dd>Copyright 2026 Spark</dd>
       </dl>
     </div>
 

@@ -250,7 +250,7 @@
             style="{hasPortalVisual ? portalStore.headerBackgroundStyle : 'background-color: var(--ds-surface-card);'} border-color: {hasPortalVisual ? 'rgba(255,255,255,0.18)' : 'var(--ds-border)'};"
           >
             <div>
-              <div class="text-xs font-semibold uppercase tracking-[0.14em] mb-2" style="color: {hasPortalVisual ? 'rgba(255,255,255,0.72)' : 'var(--ds-text-subtle)'};">Windshift staff</div>
+              <div class="text-xs font-semibold uppercase tracking-[0.14em] mb-2" style="color: {hasPortalVisual ? 'rgba(255,255,255,0.72)' : 'var(--ds-text-subtle)'};">Spark staff</div>
               <h2 id="portal-login-title" class="text-xl font-semibold" style="color: {hasPortalVisual ? '#ffffff' : 'var(--ds-text)'};">{t('portal.internalSignIn')}</h2>
             </div>
             <button type="button" onclick={closeModal} class="modal-close" style="color: {hasPortalVisual ? 'rgba(255,255,255,0.88)' : 'var(--ds-text-subtle)'};" aria-label="Close">

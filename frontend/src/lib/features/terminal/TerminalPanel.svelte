@@ -213,9 +213,9 @@
         }
       } else {
         // Browser-only mode: show message
-        newTerm.writeln('\x1b[1;34mWindshift Terminal\x1b[0m');
+        newTerm.writeln('\x1b[1;34mSpark Terminal\x1b[0m');
         newTerm.writeln('');
-        newTerm.writeln('Terminal requires the Windshift Desktop app (Tauri).');
+        newTerm.writeln('Terminal requires the Spark Desktop app (Tauri).');
         newTerm.writeln('In browser mode, drag & drop preview is available.');
         newTerm.writeln('');
         newTerm.onData((data) => {

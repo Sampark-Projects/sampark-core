@@ -576,10 +576,10 @@ export default {
     "workspace": "워크스페이스"
   },
   "about": {
-    "title": "Windshift 정보",
+    "title": "Spark 정보",
     "subtitle": "현대적인 팀을 위한 종합 업무 관리 플랫폼",
-    "whatIs": "Windshift란?",
-    "description": "Windshift는 프로젝트 추적, 테스트 관리, 시간 기록 및 팀 협업을 하나로 통합한 업무 관리 애플리케이션입니다. 현대적인 기술과 유연한 설계로 팀의 고유한 업무 흐름에 맞게 사용할 수 있습니다.",
+    "whatIs": "Spark란?",
+    "description": "Spark는 프로젝트 추적, 테스트 관리, 시간 기록 및 팀 협업을 하나로 통합한 업무 관리 애플리케이션입니다. 현대적인 기술과 유연한 설계로 팀의 고유한 업무 흐름에 맞게 사용할 수 있습니다.",
     "keyFeatures": "주요 기능",
     "projectManagement": "프로젝트 관리",
     "projectManagementDesc": "사용자 정의 필드, 워크플로 및 상태 추적으로 작업을 계층적으로 정리합니다.",
@@ -603,7 +603,7 @@ export default {
     "getStarted": "시작하기"
   },
   "onboarding": {
-    "welcomeTo": "Windshift에 오신 것을 환영합니다",
+    "welcomeTo": "Spark에 오신 것을 환영합니다",
     "getStartedMessage": "첫 워크스페이스와 작업을 만들어 시작해 보세요",
     "progress": "진행 상황",
     "completed": "완료",

@@ -532,8 +532,8 @@ export default {
   },
 
   footer: {
-    platformName: 'Платформа управления работой Windshift',
-    aboutWindshift: 'О Windshift',
+    platformName: 'Платформа управления работой Spark',
+    aboutWindshift: 'О Spark',
     apiReference: 'Справочник API',
     licenses: 'Лицензии',
     reportProblem: 'Сообщить о проблеме',

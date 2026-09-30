@@ -18,7 +18,7 @@ export default {
       legacy: 'Hérité',
     },
     runtimes: {
-      windshift: 'Exécuteur Windshift intégré',
+      windshift: 'Exécuteur Spark intégré',
       authorizedRunner: 'Exécutant de développement autorisé',
       legacyLocal: 'Exécuteur local hérité',
     },

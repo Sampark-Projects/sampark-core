@@ -540,7 +540,7 @@
               id="form-require-auth"
               bind:checked={formBuilderStore.formConfig.require_auth}
               label={t('forms.settings.requireAuth')}
-              hint="Only signed-in Windshift users can submit this form."
+              hint="Only signed-in Spark users can submit this form."
             />
 
             <Checkbox

@@ -18,7 +18,7 @@ export default {
       legacy: 'Legacy',
     },
     runtimes: {
-      windshift: 'Built-in Windshift runtime',
+      windshift: 'Built-in Spark runtime',
       authorizedRunner: 'Authorized coding runner',
       legacyLocal: 'Legacy local runtime',
     },

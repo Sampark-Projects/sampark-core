@@ -603,8 +603,8 @@ export default {
     "sun": "일"
   },
   "footer": {
-    "platformName": "Windshift 업무 관리 플랫폼",
-    "aboutWindshift": "Windshift 정보",
+    "platformName": "Spark 업무 관리 플랫폼",
+    "aboutWindshift": "Spark 정보",
     "apiReference": "API 참고 문서",
     "licenses": "라이선스",
     "reportProblem": "문제 신고"

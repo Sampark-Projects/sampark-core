@@ -159,7 +159,7 @@ export const adminGroups = [
         labelFallback: 'Integrations',
         icon: IconPlug,
         descriptionFallback:
-          'Manage outbound integrations Windshift connects to and inbound apps that authorize via OAuth.',
+          'Manage outbound integrations Spark connects to and inbound apps that authorize via OAuth.',
       },
       {
         id: 'system-import',

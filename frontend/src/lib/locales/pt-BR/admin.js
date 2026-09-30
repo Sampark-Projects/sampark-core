@@ -562,7 +562,7 @@ export default {
       autoProvisionUsersDesc: 'Criar contas de usuário automaticamente no primeiro login SSO',
       manualUserCreationOnly: 'Apenas criação manual de usuários',
       trustIdpEmailVerification: 'Vincular contas sem verificação de e-mail do IdP',
-      trustIdpEmailVerificationDesc: 'Quando ativado, identidades deste provedor são vinculadas por e-mail a contas existentes do Windshift mesmo quando o provedor não verifica o endereço. Quando desativado, a vinculação exige um e-mail verificado pelo provedor.',
+      trustIdpEmailVerificationDesc: 'Quando ativado, identidades deste provedor são vinculadas por e-mail a contas existentes do Spark mesmo quando o provedor não verifica o endereço. Quando desativado, a vinculação exige um e-mail verificado pelo provedor.',
       idpVerificationNotEnforced: 'E-mail verificado obrigatório para vinculação de contas',
       unsafeProvisioningWarningTitle: 'Vinculação sem verificação ativada',
       unsafeProvisioningWarningBody:
@@ -616,7 +616,7 @@ export default {
     },
     emailTemplates: {
       title: 'Email Templates',
-      subtitle: 'Customize the subject and body of transactional emails sent by Windshift.',
+      subtitle: 'Customize the subject and body of transactional emails sent by Spark.',
       loading: 'Loading…',
       empty: 'No email templates found.',
       template: 'Template',

@@ -1,6 +1,5 @@
 <script>
   import { Scale } from '@lucide/svelte';
-  import { IconBrandGithub as Github } from '@tabler/icons-svelte-runes';
   import Button from '../components/Button.svelte';
   import { navigate } from '../router.js';
   import { versionLabel } from '../version.js';
@@ -15,7 +14,7 @@
     <!-- Logo and Title -->
     <div class="text-center mb-12">
       <div class="flex justify-center mb-6">
-        <img src="windshift-3.svg" alt="Windshift" class="h-24 w-24" />
+        <img src="spark-logo.png" alt="Spark" class="h-24 w-24" />
       </div>
       <h1 class="text-4xl font-bold mb-4" style="color: var(--ds-text);">
         {t('about.title')}
@@ -80,27 +79,12 @@
       <section class="text-center">
         <div class="flex justify-center gap-4">
           <Button
-            onclick={() => window.open('https://github.com/Windshiftapp/core', '_blank')}
-            variant="default"
-            size="medium"
-            icon={Github}
-          >
-            {t('about.reportIssues')}
-          </Button>
-          <Button
             onclick={() => navigate('/licenses')}
             variant="default"
             size="medium"
             icon={Scale}
           >
             Licenses
-          </Button>
-          <Button
-            onclick={() => window.open('https://windshift.sh/docs/01-getting-started/01-introduction', '_blank')}
-            variant="primary"
-            size="medium"
-          >
-            {t('about.getStarted')}
           </Button>
         </div>
       </section>

@@ -49,8 +49,8 @@ export default {
       send: '보내기',
     },
     notifications: {
-      installRequired: '푸시 알림을 받으려면 Windshift를 홈 화면에 추가하세요.',
-      blocked: '알림이 차단되어 있습니다. 기기 설정에서 Windshift 알림을 허용하세요.',
+      installRequired: '푸시 알림을 받으려면 Spark를 홈 화면에 추가하세요.',
+      blocked: '알림이 차단되어 있습니다. 기기 설정에서 Spark 알림을 허용하세요.',
       enabled: '알림 켜짐',
       enable: '알림 켜기',
       caughtUp: '모든 알림을 확인했습니다',
@@ -68,11 +68,11 @@ export default {
     },
     install: {
       title: '홈 화면에 추가',
-      description: 'Windshift를 앱으로 설치하면 전체 화면으로 실행하고 푸시 알림을 받을 수 있습니다.',
+      description: 'Spark를 앱으로 설치하면 전체 화면으로 실행하고 푸시 알림을 받을 수 있습니다.',
       openSafari: '다른 앱 안의 브라우저가 아닌 Safari에서 이 페이지를 여세요.',
       share: '도구 막대의 공유 버튼을 누르세요.',
       addToHome: '홈 화면에 추가를 선택하세요.',
-      launch: '추가를 누른 뒤 새 아이콘으로 Windshift를 실행하세요.',
+      launch: '추가를 누른 뒤 새 아이콘으로 Spark를 실행하세요.',
       dismiss: '확인',
     },
     pages: {

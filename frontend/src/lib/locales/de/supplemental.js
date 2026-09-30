@@ -67,7 +67,7 @@ export default {
     "adminItems": {
       "integrationProviders": {
         "title": "Integrationen",
-        "description": "Ausgehende Integrationen verwalten Windshift stellt eine Verbindung zu und eingehende Apps her, die über OAuth autorisiert werden."
+        "description": "Ausgehende Integrationen verwalten Spark stellt eine Verbindung zu und eingehende Apps her, die über OAuth autorisiert werden."
       }
     },
     "configSets": {
@@ -159,7 +159,7 @@ export default {
     "qlQueryRequired": "QL-Abfrage ist erforderlich",
     "qlQueryTokenRequired": "QL-Abfragen im Formularmodus müssen mindestens ein Formularfeld mit ${field_identifier}-Tokens referenzieren",
     "qlQueryPlaceholder": "status = \"Active\" AND category = \"Hardware\"",
-    "qlQueryHint": "Assets mithilfe von QL (Windshift Query Language) filtern.",
+    "qlQueryHint": "Assets mithilfe von QL (Spark Query Language) filtern.",
     "qlQueryFormPlaceholder": "title = ${title} AND status = ${status}",
     "qlQueryFormHint": "Verwenden Sie ${field_identifier}-Tokens, um vom Formular übermittelte Werte zu referenzieren.",
     "runMode": "Ausführungsmodus",

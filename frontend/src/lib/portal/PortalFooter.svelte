@@ -102,7 +102,7 @@
       <!-- "Powered by {APP_NAME}" - Not configurable -->
       <div class="{portalStore.isEditing || hasFooterContent ? 'border-t pt-3' : ''} text-center" style="border-color: var(--ds-border);">
         <p class="text-xs" style="color: var(--ds-text-subtle);">
-          Powered by <a href="https://windshift.sh" target="_blank" rel="noopener noreferrer" class="hover:underline" style="color: var(--ds-text-subtle);">{APP_NAME}</a>
+          Powered by {APP_NAME}
         </p>
       </div>
     </div>

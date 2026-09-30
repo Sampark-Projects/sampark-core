@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/windshift-3.svg" />
+    <link rel="icon" type="image/png" href="/spark-logo.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="preload" as="image" href="/windshift-3.svg" type="image/svg+xml" />
+    <link rel="preload" as="image" href="/spark-logo.png" type="image/png" />
     <link
       rel="apple-touch-startup-image"
       href="/apple-touch-startup-image-1170x2532.png"
@@ -34,20 +34,20 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="Windshift" />
+    <meta name="apple-mobile-web-app-title" content="Spark" />
     <meta
       name="description"
-      content="Windshift is a self-hosted work management app for teams, with boards, workflows, time tracking, and notifications."
+      content="Spark is a self-hosted work management app for teams, with boards, workflows, time tracking, and notifications."
     />
     <link rel="canonical" href="/m" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Windshift - Work Management" />
+    <meta property="og:title" content="Spark - Work Management" />
     <meta
       property="og:description"
       content="Self-hosted work management for teams, with boards, workflows, time tracking, and notifications."
     />
     <meta property="og:image" content="./apple-touch-icon.png" />
-    <title>Windshift - Work Management</title>
+    <title>Spark - Work Management</title>
     <style>
       /* Static recovery UI for failures that happen before Svelte can mount.
          It stays in normal document flow and never overlays application UI. */
@@ -141,37 +141,37 @@
 
         const bootTranslations = {
           en: {
-            starting: 'Starting Windshift…',
+            starting: 'Starting Spark…',
             slow: 'This is taking longer than expected. Check your connection or server.',
             retry: 'Retry'
           },
           de: {
-            starting: 'Windshift wird gestartet…',
+            starting: 'Spark wird gestartet…',
             slow: 'Dies dauert länger als erwartet. Überprüfen Sie Ihre Verbindung oder den Server.',
             retry: 'Erneut versuchen'
           },
           es: {
-            starting: 'Iniciando Windshift…',
+            starting: 'Iniciando Spark…',
             slow: 'Esto está tardando más de lo esperado. Comprueba tu conexión o el servidor.',
             retry: 'Reintentar'
           },
           ar: {
-            starting: 'جارٍ تشغيل Windshift…',
+            starting: 'جارٍ تشغيل Spark…',
             slow: 'يستغرق هذا وقتًا أطول من المتوقع. تحقق من اتصالك أو الخادم.',
             retry: 'إعادة المحاولة'
           },
           'pt-BR': {
-            starting: 'Iniciando o Windshift…',
+            starting: 'Iniciando o Spark…',
             slow: 'Isso está demorando mais do que o esperado. Verifique sua conexão ou o servidor.',
             retry: 'Tentar novamente'
           },
           ru: {
-            starting: 'Запуск Windshift…',
+            starting: 'Запуск Spark…',
             slow: 'Это занимает больше времени, чем ожидалось. Проверьте подключение или сервер.',
             retry: 'Повторить'
           },
           'zh-CN': {
-            starting: '正在启动 Windshift…',
+            starting: '正在启动 Spark…',
             slow: '所需时间超出预期。请检查网络连接或服务器。',
             retry: '重试'
           }
@@ -214,8 +214,8 @@
     <div id="app">
       <div id="windshift-boot" role="status" aria-live="polite">
         <div>
-          <img class="boot-logo" src="windshift-3.svg" alt="Windshift" width="64" height="64" />
-          <p id="windshift-boot-starting">Starting Windshift…</p>
+          <img class="boot-logo" src="spark-logo.png" alt="Spark" width="64" height="64" />
+          <p id="windshift-boot-starting">Starting Spark…</p>
           <p id="windshift-boot-detail" class="boot-detail" hidden>
             This is taking longer than expected. Check your connection or server.
           </p>

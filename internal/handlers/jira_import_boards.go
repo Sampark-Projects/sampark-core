@@ -21,9 +21,9 @@ var (
 	jqlIdentifierSafe      = regexp.MustCompile(`^[A-Za-z0-9_.:-]+$`)
 )
 
-// importJiraBoardsAndFilters imports Jira saved filters as Windshift collections
+// importJiraBoardsAndFilters imports Jira saved filters as Spark collections
 // and Jira Agile boards as collection-backed board configurations. The Jira API
-// does not expose every JQL/board concept in a Windshift-compatible shape; when
+// does not expose every JQL/board concept in a Spark-compatible shape; when
 // translation is partial, the importer records unsupported clauses in mapping
 // metadata and the collection description instead of silently dropping them.
 func (h *JiraImportHandler) importJiraBoardsAndFilters(ctx context.Context, jobID, projectKey string, workspaceID int, statusMap map[string]int, client jira.Client, createdByUserID int) {
@@ -158,7 +158,7 @@ func jiraFilterCollectionDescription(filter jira.JiraFilter, unsupported []strin
 		parts = append(parts, "Original JQL:\n```jql\n"+strings.TrimSpace(filter.JQL)+"\n```")
 	}
 	if len(unsupported) > 0 {
-		parts = append(parts, "Unsupported JQL clauses not translated into Windshift QL:\n- "+strings.Join(unsupported, "\n- "))
+		parts = append(parts, "Unsupported JQL clauses not translated into Spark QL:\n- "+strings.Join(unsupported, "\n- "))
 	}
 	return strings.Join(parts, "\n\n")
 }
@@ -172,7 +172,7 @@ func jiraBoardCollectionDescription(board jira.JiraBoard, config *jira.JiraBoard
 		parts = append(parts, "Original board/filter JQL:\n```jql\n"+strings.TrimSpace(jql)+"\n```")
 	}
 	if len(unsupported) > 0 {
-		parts = append(parts, "Unsupported JQL clauses not translated into Windshift QL:\n- "+strings.Join(unsupported, "\n- "))
+		parts = append(parts, "Unsupported JQL clauses not translated into Spark QL:\n- "+strings.Join(unsupported, "\n- "))
 	}
 	return strings.Join(parts, "\n\n")
 }

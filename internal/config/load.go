@@ -38,7 +38,7 @@ func Load(frontend embed.FS, shutdownChan chan os.Signal) Config {
 		useProxy                    = flag.Bool("use-proxy", false, "Enable proxy mode (trust X-Forwarded-Proto from private IPs)")
 		allowInsecureHTTP           = flag.Bool("allow-insecure-http", false, "Allow browser access via plain http on non-localhost origins — trusted LANs/testing only")
 		baseURL                     = flag.String("base-url", "", "Public URL for the server")
-		contextPath                 = flag.String("context-path", "", "Public context path to serve Windshift under, e.g. /windshift")
+		contextPath                 = flag.String("context-path", "", "Public context path to serve Spark under, e.g. /windshift")
 		additionalProxies           = flag.String("additional-proxies", "", "Additional proxy IPs to trust")
 		enableSSH                   = flag.Bool("ssh", false, "Enable SSH TUI server")
 		enableMCP                   = flag.Bool("mcp", false, "Enable MCP server at /mcp")
@@ -46,7 +46,7 @@ func Load(frontend embed.FS, shutdownChan chan os.Signal) Config {
 		sshHost                     = flag.String("ssh-host", "localhost", "SSH server host")
 		sshKeyPath                  = flag.String("ssh-key", ".ssh/windshift_host_key", "SSH host key file path")
 		maxReadConns                = flag.Int("max-read-conns", 30, "Max read connections (per pool; sum across pools × replicas must stay under Postgres max_connections)")
-		postgresReplicaCount        = flag.Int("postgres-replica-count", 1, "Number of Windshift replicas sharing PostgreSQL for aggregate pool budgeting")
+		postgresReplicaCount        = flag.Int("postgres-replica-count", 1, "Number of Spark replicas sharing PostgreSQL for aggregate pool budgeting")
 		postgresHeadroom            = flag.Int("postgres-connection-headroom", 10, "PostgreSQL connections reserved for migrations, administration, and other clients")
 		maxUserConcurrency          = flag.Int("max-user-concurrency", 16, "Max simultaneous in-flight /api requests per authenticated user (0 disables)")
 		maxTemplateSeedItems        = flag.Int("max-template-seed-items", 1000, "Maximum seed items copied when creating a workspace from a template")
@@ -64,7 +64,7 @@ func Load(frontend embed.FS, shutdownChan chan os.Signal) Config {
 		activateDurableAssetActions = flag.Bool("activate-durable-asset-actions", false, "Record the one-way cutover to canonical durable asset actions")
 		llmProvidersFile            = flag.String("llm-providers", "", "Path to custom LLM providers JSON file")
 		aiPromptsDir                = flag.String("ai-prompts-dir", "", "Directory of custom AI prompt override files")
-		memoryLimitMB               = flag.Int("memory-limit-mb", DefaultMemoryLimitMB, "Total Windshift process memory budget in MiB")
+		memoryLimitMB               = flag.Int("memory-limit-mb", DefaultMemoryLimitMB, "Total Spark process memory budget in MiB")
 	)
 	flag.Parse()
 
@@ -185,7 +185,7 @@ func Load(frontend embed.FS, shutdownChan chan os.Signal) Config {
 	// a full http(s) URL there as a convenience, but retain only its hostname: the
 	// WebAuthn protocol requires an RP ID rather than an origin.
 	rpID := resolveWebAuthnRPID(os.Getenv("WEBAUTHN_RP_ID"), resolvedBaseURL, os.Hostname)
-	rpName := firstNonEmpty(os.Getenv("WEBAUTHN_RP_NAME"), "Windshift")
+	rpName := firstNonEmpty(os.Getenv("WEBAUTHN_RP_NAME"), "Spark")
 
 	// Web Push (VAPID). Both keys must be set to enable push; subject defaults
 	// to the BaseURL so the VAPID JWT carries a valid contact URL.

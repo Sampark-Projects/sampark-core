@@ -45,14 +45,14 @@ func (h *OAuthHandler) MCPDiscoveryEnabled() bool {
 func (h *OAuthHandler) ProtectedResourceMetadata(w http.ResponseWriter, _ *http.Request) {
 	writeOAuthMetadata(w, map[string]any{
 		"resource":                 h.mcpResourceURI,
-		"resource_name":            "Windshift MCP",
+		"resource_name":            "Spark MCP",
 		"authorization_servers":    []string{h.issuerURL},
 		"scopes_supported":         nonAdminOAuthScopes(),
 		"bearer_methods_supported": []string{"header"},
 	})
 }
 
-// AuthorizationServerMetadata implements RFC 8414 discovery for Windshift's
+// AuthorizationServerMetadata implements RFC 8414 discovery for Spark's
 // authorization-code server.
 func (h *OAuthHandler) AuthorizationServerMetadata(w http.ResponseWriter, _ *http.Request) {
 	writeOAuthMetadata(w, map[string]any{

@@ -47,7 +47,7 @@ function parseEmbeddedProviderError(message) {
 
 /**
  * Extract the provider/model message from a failed LLM connection test.
- * OpenAI-compatible gateways return their error envelope inside Windshift's
+ * OpenAI-compatible gateways return their error envelope inside Spark's
  * own API error string, so the generic API client cannot unwrap it directly.
  */
 export function llmConnectionTestErrorMessage(error) {

@@ -359,7 +359,7 @@ export default {
     "qlQueryRequired": "QL 쿼리는 필수입니다",
     "qlQueryTokenRequired": "양식 모드의 QL 쿼리는 ${field_identifier} 토큰으로 양식 필드를 하나 이상 참조해야 합니다",
     "qlQueryPlaceholder": "status = \"Active\" AND category = \"Hardware\"",
-    "qlQueryHint": "QL(Windshift 쿼리 언어)로 자산을 필터링합니다.",
+    "qlQueryHint": "QL(Spark 쿼리 언어)로 자산을 필터링합니다.",
     "qlQueryFormPlaceholder": "title = ${title} AND status = ${status}",
     "qlQueryFormHint": "제출된 양식 값을 참조하려면 ${field_identifier} 토큰을 사용하세요.",
     "runMode": "실행 모드",

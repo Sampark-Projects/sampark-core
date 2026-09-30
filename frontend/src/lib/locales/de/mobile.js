@@ -49,8 +49,8 @@ export default {
       send: 'Senden',
     },
     notifications: {
-      installRequired: 'Fügen Sie Windshift zum Homebildschirm hinzu, um Push-Benachrichtigungen zu erhalten.',
-      blocked: 'Benachrichtigungen sind blockiert. Aktivieren Sie sie für Windshift in den Geräteeinstellungen.',
+      installRequired: 'Fügen Sie Spark zum Homebildschirm hinzu, um Push-Benachrichtigungen zu erhalten.',
+      blocked: 'Benachrichtigungen sind blockiert. Aktivieren Sie sie für Spark in den Geräteeinstellungen.',
       enabled: 'Benachrichtigungen aktiv',
       enable: 'Benachrichtigungen aktivieren',
       caughtUp: 'Sie sind auf dem neuesten Stand',
@@ -68,11 +68,11 @@ export default {
     },
     install: {
       title: 'Zum Homebildschirm hinzufügen',
-      description: 'Installieren Sie Windshift als App, um es im Vollbild zu öffnen und Push-Benachrichtigungen zu erhalten.',
+      description: 'Installieren Sie Spark als App, um es im Vollbild zu öffnen und Push-Benachrichtigungen zu erhalten.',
       openSafari: 'Öffnen Sie diese Seite in Safari (nicht innerhalb einer anderen App).',
       share: 'Tippen Sie in der Symbolleiste auf „Teilen“.',
       addToHome: 'Wählen Sie „Zum Homebildschirm hinzufügen“.',
-      launch: 'Tippen Sie auf „Hinzufügen“ und öffnen Sie Windshift über das neue Symbol.',
+      launch: 'Tippen Sie auf „Hinzufügen“ und öffnen Sie Spark über das neue Symbol.',
       dismiss: 'Verstanden',
     },
     pages: {

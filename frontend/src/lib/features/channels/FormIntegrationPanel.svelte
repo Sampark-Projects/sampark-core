@@ -63,7 +63,7 @@
       class="rounded-md border p-3 text-sm"
       style="border-color: var(--ds-border-warning, #ca8a04); background: var(--ds-background-warning, #fef9c3); color: var(--ds-text-warning, #854d0e);"
     >
-      This channel has a sign-in-required form. Use the share link; embedded forms cannot pass along a Windshift sign-in.
+      This channel has a sign-in-required form. Use the share link; embedded forms cannot pass along a Spark sign-in.
     </div>
   {:else if embedModeCheckFailed}
     <div
@@ -71,7 +71,7 @@
       class="rounded-md border p-3 text-sm"
       style="border-color: var(--ds-border-warning, #ca8a04); background: var(--ds-background-warning, #fef9c3); color: var(--ds-text-warning, #854d0e);"
     >
-      Windshift could not check whether these forms require sign-in. Use the share link, or try again before embedding them.
+      Spark could not check whether these forms require sign-in. Use the share link, or try again before embedding them.
     </div>
   {/if}
 

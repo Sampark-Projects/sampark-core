@@ -85,7 +85,7 @@
   <section class="mb-10">
     <h2 class="text-lg font-semibold mb-4" style="color: var(--ds-text);">Branded Loading</h2>
     <p class="mb-4 text-sm" style="color: var(--ds-text-subtle);">
-      Full-page loading states using the Windshift logo with pulse animation.
+      Full-page loading states using the Spark logo with pulse animation.
     </p>
 
     <div class="space-y-6">
@@ -108,8 +108,8 @@
           style="background-color: var(--ds-surface-raised); border: 1px solid var(--ds-border);"
         >
           <div class="text-center">
-            <img src="/windshift-3.svg" alt="Windshift" class="w-16 h-16 mx-auto mb-4 opacity-50" />
-            <h1 class="text-2xl font-bold mb-2" style="color: var(--ds-text-disabled);">Windshift</h1>
+            <img src="/spark-logo.png" alt="Spark" class="w-16 h-16 mx-auto mb-4 opacity-50" />
+            <h1 class="text-2xl font-bold mb-2" style="color: var(--ds-text-disabled);">Spark</h1>
             <p style="color: var(--ds-text-subtle);">Work Management</p>
           </div>
         </div>

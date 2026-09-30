@@ -73,7 +73,7 @@ export default {
       },
       "integrationProviders": {
         "title": "集成",
-        "description": "管理出站集成 Windshift 连接到通过 OAuth 授权的入站应用程序。"
+        "description": "管理出站集成 Spark 连接到通过 OAuth 授权的入站应用程序。"
       },
       "diagnostics": {
         "description": "系统运行状况：服务器时钟、操作失败和其他操作信号"
@@ -83,7 +83,7 @@ export default {
       "importSuccess": "配置集已成功导入"
     },
     "emailTemplates": {
-      "subtitle": "自定义 Windshift 发送的事务电子邮件的主题和正文。",
+      "subtitle": "自定义 Spark 发送的事务电子邮件的主题和正文。",
       "empty": "未找到电子邮件模板。",
       "adminNotes": "描述（管理员注释）",
       "activeHint": "活动（取消选中以回退到内置默认值）",
@@ -195,7 +195,7 @@ export default {
     "qlQueryRequired": "需要 QL 查询",
     "qlQueryTokenRequired": "表单模式 QL 查询必须使用 ${field_identifier} 标记引用至少一个表单字段",
     "qlQueryPlaceholder": "status = \"Active\" AND category = \"Hardware\"",
-    "qlQueryHint": "使用 QL（Windshift 查询语言）过滤资产。",
+    "qlQueryHint": "使用 QL（Spark 查询语言）过滤资产。",
     "qlQueryFormPlaceholder": "title = ${title} AND status = ${status}",
     "qlQueryFormHint": "使用 ${field_identifier} 标记来引用表单提交的值。",
     "runMode": "运行模式",

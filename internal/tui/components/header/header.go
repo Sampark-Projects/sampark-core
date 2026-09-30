@@ -12,12 +12,12 @@ import (
 
 // Render paints the header:
 //
-//	◐ Windshift   /   WI · Workspace name                         user@host
+//	◐ Spark   /   WI · Workspace name                         user@host
 //
 // Left and right blocks are pinned; the workspace breadcrumb truncates when
 // the terminal is narrow. workspaceLabel may be empty (workspace picker).
 func Render(s *styles.Styles, width int, workspaceLabel string, u *data.UserInfo) string {
-	left := s.Header.Logo.Foreground(s.Palette.Primary).Render("◐ Windshift")
+	left := s.Header.Logo.Foreground(s.Palette.Primary).Render("◐ Spark")
 
 	var middle string
 	if workspaceLabel != "" {

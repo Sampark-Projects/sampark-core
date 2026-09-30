@@ -263,7 +263,7 @@ func (s *AgentPRService) openRepoPR(ctx context.Context, info PostRunInfo, bindi
 	// The agent's finish summary (WI-400), when present, leads the body as the
 	// PR note; the harness footer (run id / base / branch) follows a rule.
 	body := fmt.Sprintf(
-		"Opened by the Windshift coding-agent harness.\n\nRun id: %d\nBase commit: %s\nBranch: %s\n",
+		"Opened by the Spark coding-agent harness.\n\nRun id: %d\nBase commit: %s\nBranch: %s\n",
 		info.RunID, pr.baseCommit, pr.branch,
 	)
 	if note := boundPRNote(info.Summary); note != "" {
@@ -412,14 +412,14 @@ func continuationTerminalBody(info PostRunInfo) string {
 	switch info.Status {
 	case models.AgentRunStatusSucceeded:
 		if continuationChanged(info) {
-			body = "The Windshift coding agent pushed updates to this pull request."
+			body = "The Spark coding agent pushed updates to this pull request."
 		} else {
-			body = "The Windshift coding agent completed the review request; no code changes were needed."
+			body = "The Spark coding agent completed the review request; no code changes were needed."
 		}
 	case models.AgentRunStatusCanceled, models.AgentRunStatusKilled:
-		body = "The Windshift coding-agent run was canceled before it could complete this review request."
+		body = "The Spark coding-agent run was canceled before it could complete this review request."
 	default:
-		body = "The Windshift coding agent could not complete this review request."
+		body = "The Spark coding agent could not complete this review request."
 		if message := strings.TrimSpace(info.Error); message != "" {
 			body += "\n\nReason: " + boundPRNote(message)
 		}

@@ -69,7 +69,7 @@ function createEvent({ uid, start, end, title, description, url, location }) {
  * @param {Array} events - Array of event strings from createEvent()
  * @param {string} [calendarName] - Optional calendar name
  */
-function generateICSContent(events, calendarName = 'Windshift Calendar') {
+function generateICSContent(events, calendarName = 'Spark Calendar') {
   const header = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
@@ -116,8 +116,8 @@ export function exportTasksToICS(tasks, baseUrl, filename) {
 
       const itemUrl = `${baseUrl}/workspaces/${task.workspace_id}/items/${task.id}`;
       const description = task.description
-        ? `${task.description}\n\nView in Windshift: ${itemUrl}`
-        : `View in Windshift: ${itemUrl}`;
+        ? `${task.description}\n\nView in Spark: ${itemUrl}`
+        : `View in Spark: ${itemUrl}`;
 
       return createEvent({
         uid: `${task.id}-${task.scheduledDate}@windshift`,

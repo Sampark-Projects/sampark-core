@@ -3,10 +3,10 @@ package jira
 import "strings"
 
 // readiness.go classifies how faithfully a Jira instance migrates into
-// Windshift. It is a pure layer on top of field_mapper.go — no I/O — so the
+// Spark. It is a pure layer on top of field_mapper.go — no I/O — so the
 // handler can feed it sampled issue data and the test suite can exercise the
 // rules directly. The same clean/lossy/blocked taxonomy backs the
-// "Migrating Jira to Windshift" whitepaper, so the two never drift apart.
+// "Migrating Jira to Spark" whitepaper, so the two never drift apart.
 
 // Severity classifies how faithfully a Jira concept survives import.
 type Severity string
@@ -33,21 +33,21 @@ type Finding struct {
 	UsageCount int      `json:"usage_count"`
 }
 
-// fieldTypeSeverity maps a resolved Windshift field type to its migration
+// fieldTypeSeverity maps a resolved Spark field type to its migration
 // fidelity. Native scalar, user, asset, and option mappings land cleanly.
 // Opaque app-owned structures are deliberately preserved as JSON text and are
 // classified separately by ClassifyField.
 func fieldTypeSeverity(t WindshiftFieldType) (severity Severity, reason string) {
 	switch t {
 	case FieldTypeUnmapped:
-		return SeverityBlocked, "No Windshift equivalent for this field type; it is skipped."
+		return SeverityBlocked, "No Spark equivalent for this field type; it is skipped."
 	case FieldTypeUser, FieldTypeMultiUser:
-		return SeverityClean, "User-valued field; resolved to Windshift users by account/email."
+		return SeverityClean, "User-valued field; resolved to Spark users by account/email."
 	case FieldTypeAsset:
-		return SeverityClean, "Backed by Jira Assets/Insight; the referenced objects import into Windshift asset sets and the field resolves to them."
+		return SeverityClean, "Backed by Jira Assets/Insight; the referenced objects import into Spark asset sets and the field resolves to them."
 	default:
 		// text, textarea, number, select, multiselect, date, milestone, iteration
-		return SeverityClean, "Field type maps to a Windshift custom field and its value is written during import."
+		return SeverityClean, "Field type maps to a Spark custom field and its value is written during import."
 	}
 }
 
@@ -58,20 +58,20 @@ func ClassifyField(s FieldMappingSuggestion, usageCount int) Finding {
 	switch s.JiraFieldType {
 	case "com.pyxis.greenhopper.jira:gh-lexo-rank":
 		sev = SeverityClean
-		reason = "Jira Rank controls import order; Windshift generates increasing fractional indexes in that order."
+		reason = "Jira Rank controls import order; Spark generates increasing fractional indexes in that order."
 	case "com.atlassian.servicedesk:vp-origin":
 		sev = SeverityClean
 		reason = "Jira Request Type maps to the item's first-class portal request type."
 	}
 	if s.PreserveRaw {
 		sev = SeverityLossy
-		reason = "No proven native Windshift shape; the complete Jira value is preserved as JSON text."
+		reason = "No proven native Spark shape; the complete Jira value is preserved as JSON text."
 	}
 	if s.WindshiftFieldType == FieldTypeDate &&
 		(strings.Contains(strings.ToLower(s.JiraFieldType), "datetime") ||
 			strings.Contains(s.Notes, "time-of-day editing is lossy")) {
 		sev = SeverityLossy
-		reason = "Jira datetime values retain their timestamp, but Windshift exposes calendar-date editing and rendering."
+		reason = "Jira datetime values retain their timestamp, but Spark exposes calendar-date editing and rendering."
 	}
 	if s.Notes != "" {
 		reason += " " + s.Notes

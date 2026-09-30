@@ -271,7 +271,7 @@ func (h *JiraImportHandler) jiraConfigurationReadinessFindings(
 				Entity:     "Workflow conditions and validators",
 				Category:   "workflow_rule",
 				Severity:   jira.SeverityBlocked,
-				Reason:     "Jira transitions with exposed conditions or validators retain their topology but stay behind a generated review lock because Jira rule semantics do not safely map to the Windshift condition model.",
+				Reason:     "Jira transitions with exposed conditions or validators retain their topology but stay behind a generated review lock because Jira rule semantics do not safely map to the Spark condition model.",
 				UsageCount: guardedCount,
 			})
 		}
@@ -280,7 +280,7 @@ func (h *JiraImportHandler) jiraConfigurationReadinessFindings(
 				Entity:     "Workflow post-functions and triggers",
 				Category:   "workflow_rule",
 				Severity:   jira.SeverityLossy,
-				Reason:     "Transition topology imports, but Jira post-functions/actions and triggers have no portable Windshift equivalent and are recorded only as import fidelity metadata.",
+				Reason:     "Transition topology imports, but Jira post-functions/actions and triggers have no portable Spark equivalent and are recorded only as import fidelity metadata.",
 				UsageCount: actionCount + triggerCount,
 			})
 		}
@@ -289,7 +289,7 @@ func (h *JiraImportHandler) jiraConfigurationReadinessFindings(
 				Entity:     "Workflow loop transitions",
 				Category:   "workflow_rule",
 				Severity:   jira.SeverityBlocked,
-				Reason:     "Windshift treats a same-status update as a no-op before transition rules execute. Jira loop transitions are omitted so their conditions, post-functions, or triggers cannot be bypassed.",
+				Reason:     "Spark treats a same-status update as a no-op before transition rules execute. Jira loop transitions are omitted so their conditions, post-functions, or triggers cannot be bypassed.",
 				UsageCount: loopCount,
 			})
 		}
@@ -330,14 +330,14 @@ func (h *JiraImportHandler) jiraConfigurationReadinessFindings(
 			Entity:     "Create/edit/view screens",
 			Category:   "screen",
 			Severity:   jira.SeverityClean,
-			Reason:     "Jira issue-type screen schemes and operation-specific create/edit/view field order are available for Windshift screen assignments.",
+			Reason:     "Jira issue-type screen schemes and operation-specific create/edit/view field order are available for Spark screen assignments.",
 			UsageCount: max(fieldCount, 1),
 		},
 		jira.Finding{
 			Entity:     "Jira field configuration",
 			Category:   "screen",
 			Severity:   jira.SeverityLossy,
-			Reason:     "Screen membership and field order import, but Jira hidden/required field-configuration rules are not exposed by the screen APIs and are not inferred; only Windshift's required title invariant is applied.",
+			Reason:     "Screen membership and field order import, but Jira hidden/required field-configuration rules are not exposed by the screen APIs and are not inferred; only Spark's required title invariant is applied.",
 			UsageCount: max(len(screenConfig.Screens), 1),
 		},
 	)
@@ -346,7 +346,7 @@ func (h *JiraImportHandler) jiraConfigurationReadinessFindings(
 			Entity:     "Screen tabs",
 			Category:   "screen",
 			Severity:   jira.SeverityLossy,
-			Reason:     "Windshift has no screen-tab model; fields from multiple Jira tabs are flattened in tab and field order.",
+			Reason:     "Spark has no screen-tab model; fields from multiple Jira tabs are flattened in tab and field order.",
 			UsageCount: flattenedTabCount,
 		})
 	}
@@ -355,7 +355,7 @@ func (h *JiraImportHandler) jiraConfigurationReadinessFindings(
 			Entity:     "Screen fields without an imported field",
 			Category:   "screen",
 			Severity:   jira.SeverityLossy,
-			Reason:     "Jira screen entries with no Windshift system-field mapping or imported custom-field definition are omitted from the imported screen.",
+			Reason:     "Jira screen entries with no Spark system-field mapping or imported custom-field definition are omitted from the imported screen.",
 			UsageCount: unsupportedFieldCount,
 		})
 	}
@@ -372,9 +372,9 @@ func jiraWorkflowUnavailableFinding() jira.Finding {
 }
 
 func jiraScreenUnavailableFinding(project *jira.JiraProject) jira.Finding {
-	reason := "The Jira issue-type screen configuration is unavailable with this deployment or credential, so Windshift screens cannot be reconstructed."
+	reason := "The Jira issue-type screen configuration is unavailable with this deployment or credential, so Spark screens cannot be reconstructed."
 	if project != nil && (project.Simplified || project.Style == "next-gen") {
-		reason = "This is a team-managed Jira project; Jira's company-managed screen scheme APIs do not expose its layout, so Windshift screens cannot be reconstructed."
+		reason = "This is a team-managed Jira project; Jira's company-managed screen scheme APIs do not expose its layout, so Spark screens cannot be reconstructed."
 	}
 	return jira.Finding{
 		Entity:   "Create/edit/view screens",
@@ -529,7 +529,7 @@ func buildFindings(t *projectScanTally, fields map[string]jira.FieldMappingSugge
 	if t.attachments > 0 {
 		findings = append(findings, jira.Finding{
 			Entity: "Attachments", Category: "attachments", Severity: jira.SeverityClean,
-			Reason: "Files download and re-attach when attachment storage is configured on the Windshift side.", UsageCount: t.attachments,
+			Reason: "Files download and re-attach when attachment storage is configured on the Spark side.", UsageCount: t.attachments,
 		})
 	}
 	if t.labeledIssues > 0 {
@@ -552,7 +552,7 @@ func buildFindings(t *projectScanTally, fields map[string]jira.FieldMappingSugge
 	if t.unmappedFieldUse > 0 {
 		findings = append(findings, jira.Finding{
 			Entity: "Unmapped custom fields", Category: "custom_field", Severity: jira.SeverityBlocked,
-			Reason: "Values belong to custom fields with no known Windshift mapping (typically third-party/app fields) and are not imported.", UsageCount: t.unmappedFieldUse,
+			Reason: "Values belong to custom fields with no known Spark mapping (typically third-party/app fields) and are not imported.", UsageCount: t.unmappedFieldUse,
 		})
 	}
 
@@ -570,7 +570,7 @@ func buildFindings(t *projectScanTally, fields map[string]jira.FieldMappingSugge
 		}
 		findings = append(findings, jira.Finding{
 			Entity: "Sprints / iterations", Category: "iteration", Severity: jira.SeverityClean,
-			Reason: "Boards/sprints import as Windshift iterations (name, start/end dates, state) and each issue's sprint membership is assigned to the imported item.", UsageCount: weight,
+			Reason: "Boards/sprints import as Spark iterations (name, start/end dates, state) and each issue's sprint membership is assigned to the imported item.", UsageCount: weight,
 		})
 	}
 	if len(t.usersMissingEmail) > 0 {
@@ -581,11 +581,11 @@ func buildFindings(t *projectScanTally, fields map[string]jira.FieldMappingSugge
 	}
 
 	// Lossy: imported, but as metadata or under conditions rather than as a
-	// first-class Windshift concept.
+	// first-class Spark concept.
 	if t.components > 0 {
 		findings = append(findings, jira.Finding{
 			Entity: "Components", Category: "components", Severity: jira.SeverityLossy,
-			Reason: "Jira components have no first-class Windshift equivalent; they are preserved as read-only metadata on the item, not as editable components.", UsageCount: t.components,
+			Reason: "Jira components have no first-class Spark equivalent; they are preserved as read-only metadata on the item, not as editable components.", UsageCount: t.components,
 		})
 	}
 	if t.affectsVersions > 0 {
@@ -597,15 +597,15 @@ func buildFindings(t *projectScanTally, fields map[string]jira.FieldMappingSugge
 	if t.worklogs > 0 {
 		findings = append(findings, jira.Finding{
 			Entity: "Worklogs / time tracking", Category: "worklog", Severity: jira.SeverityLossy,
-			Reason: "Worklog entries import into Windshift time tracking when the import maps a time project; without one they are skipped, and only the worklogs returned in the issue payload are imported, so very long histories may be truncated. Estimates are kept as item metadata.", UsageCount: t.worklogs,
+			Reason: "Worklog entries import into Spark time tracking when the import maps a time project; without one they are skipped, and only the worklogs returned in the issue payload are imported, so very long histories may be truncated. Estimates are kept as item metadata.", UsageCount: t.worklogs,
 		})
 	}
 
-	// Blocked: data with no Windshift home today.
+	// Blocked: data with no Spark home today.
 	if t.changelogs > 0 {
 		findings = append(findings, jira.Finding{
 			Entity: "Issue history / changelog", Category: "changelog", Severity: jira.SeverityBlocked,
-			Reason: "Field-change history is not imported; items start with a fresh Windshift history.", UsageCount: t.changelogs,
+			Reason: "Field-change history is not imported; items start with a fresh Spark history.", UsageCount: t.changelogs,
 		})
 	}
 

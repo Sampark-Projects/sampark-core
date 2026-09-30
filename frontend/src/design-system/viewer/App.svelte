@@ -186,7 +186,7 @@
     <!-- Header -->
     <div class="p-4 border-b" style="border-color: var(--ds-border);">
       <h1 class="text-lg font-semibold" style="color: var(--ds-text);">
-        Windshift Design System
+        Spark Design System
       </h1>
     </div>
 

@@ -118,7 +118,7 @@
         >
           <div class="mb-6 flex h-10 items-center gap-3 px-3.5">
             <div class="grid size-8 shrink-0 place-items-center rounded-lg bg-ds-accent-blue text-sm font-bold text-white">W</div>
-            {#if mainExpanded}<span class="text-sm font-semibold" style="color: var(--ds-text);">Windshift</span>{/if}
+            {#if mainExpanded}<span class="text-sm font-semibold" style="color: var(--ds-text);">Spark</span>{/if}
           </div>
 
           <nav class="flex flex-1 flex-col gap-1 px-2.5" aria-label="Mock main navigation">

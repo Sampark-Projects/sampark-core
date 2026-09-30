@@ -129,7 +129,7 @@
       }
     } catch (error) {
       if (attempt !== startupAttempt) return;
-      console.error('Failed to initialize Windshift:', error);
+      console.error('Failed to initialize Spark:', error);
       setupLoading = false;
       appInitialized = false;
       startupError =
@@ -379,9 +379,9 @@
   {#if startupError}
     <div class="min-h-screen flex items-center justify-center w-full px-6" data-testid="startup-error">
       <div class="text-center max-w-sm">
-        <img src="windshift-3.svg" alt={APP_NAME} width="64" height="64" class="w-16 h-16 mx-auto mb-4 opacity-75" />
+        <img src="spark-logo.png" alt={APP_NAME} width="64" height="64" class="w-16 h-16 mx-auto mb-4 opacity-75" />
         <h1 class="text-xl font-semibold mb-2">
-          {getStartupCopy('errors.failedToLoad', i18nReady, t)} Windshift
+          {getStartupCopy('errors.failedToLoad', i18nReady, t)} Spark
         </h1>
         <p class="text-ds-text-subtle mb-5">{getStartupCopy(startupError, i18nReady, t)}</p>
         <Button variant="primary" size="large" class="min-h-11" onclick={() => initializeApp()} dataTestid="startup-retry">
@@ -458,8 +458,8 @@
       {:else if showLoginDialog}
         <!-- Login dialog will show, but we can show a minimal background -->
         <div class="text-center">
-          <img src="windshift-3.svg" alt="Windshift" width="64" height="64" class="w-16 h-16 mx-auto mb-4 opacity-50" />
-          <h1 class="text-2xl font-bold text-ds-text-subtlest mb-2">Windshift</h1>
+          <img src="spark-logo.png" alt="Spark" width="64" height="64" class="w-16 h-16 mx-auto mb-4 opacity-50" />
+          <h1 class="text-2xl font-bold text-ds-text-subtlest mb-2">Spark</h1>
           <p class="text-ds-text-subtle">{t('footer.platformName')}</p>
         </div>
       {/if}

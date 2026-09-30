@@ -66,7 +66,7 @@
   async function request(path, options = {}) {
     const response = await fetch(`${baseUrl}/api${path}`, {
       ...options,
-      // Same-origin widgets may use the browser's Windshift session. Browsers
+      // Same-origin widgets may use the browser's Spark session. Browsers
       // still omit credentials for cross-origin widgets, whose authenticated
       // mode is intentionally unsupported by the integration UI.
       credentials: 'same-origin',
@@ -330,9 +330,9 @@
           <div class="wsf-error" data-testid="form-auth-required">
             <AlertBox
               variant="warning"
-              message="This form requires a Windshift sign-in. Sign in in this browser, then retry from the hosted form."
+              message="This form requires a Spark sign-in. Sign in in this browser, then retry from the hosted form."
             />
-            <a href={baseUrl || '/'} target="_blank" rel="noreferrer">Open Windshift to sign in</a>
+            <a href={baseUrl || '/'} target="_blank" rel="noreferrer">Open Spark to sign in</a>
           </div>
         {:else if error}
           <AlertBox variant="error" message={error} class="wsf-error" />
