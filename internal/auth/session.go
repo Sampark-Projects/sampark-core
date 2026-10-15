@@ -370,3 +370,26 @@ func (sm *SessionManager) ClearEnrollmentRequiredByUserID(userID int) error {
 	sm.InvalidateUserSessionValidation(userID)
 	return nil
 }
+
+// SSOLogoutCookieName holds the provider slug and ID token of an OIDC login so
+// logout can also end the session at the identity provider.
+const SSOLogoutCookieName = "sso_logout"
+
+// SetSSOLogoutCookie stores the encoded OIDC logout hint alongside the session.
+func (sm *SessionManager) SetSSOLogoutCookie(w http.ResponseWriter, r *http.Request, value string, rememberMe bool) error {
+	maxAge := int(DefaultSessionDuration.Seconds())
+	if rememberMe {
+		maxAge = int(ExtendedSessionDuration.Seconds())
+	}
+	return sm.setSessionCookie(w, r, SSOLogoutCookieName, value, maxAge)
+}
+
+// GetSSOLogoutCookie returns the OIDC logout hint set at login, if any.
+func (sm *SessionManager) GetSSOLogoutCookie(r *http.Request) (string, error) {
+	return sm.getSessionFromCookie(r, SSOLogoutCookieName)
+}
+
+// ClearSSOLogoutCookie removes the OIDC logout hint.
+func (sm *SessionManager) ClearSSOLogoutCookie(w http.ResponseWriter, r *http.Request) {
+	sm.clearSessionCookie(w, r, SSOLogoutCookieName)
+}

@@ -818,6 +818,7 @@ func (s *Server) initialize() error {
 	setupHandler := handlers.NewSetupHandler(s.db, sessionManager, authMiddleware)
 
 	ssoHandler := handlers.NewSSOHandler(s.db, sessionManager, permService, emailVerificationService, s.pluginManager, cfg.Auth.SessionSecret, baseURL, cfg.AllowedHosts, cfg.DisableCSRF, ipExtractor, cfg.UseProxy, additionalProxyList)
+	authHandler.SetSSOLogout(ssoHandler.EndIdPSession)
 
 	scmProviderHandler := handlers.NewSCMProviderHandler(s.db, cfg.Auth.SessionSecret, baseURL)
 	s.secretEncryption = scmProviderHandler.GetEncryption()
