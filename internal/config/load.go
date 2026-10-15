@@ -348,7 +348,24 @@ func postgresEnv() database.PostgresEnv {
 		Password: os.Getenv("POSTGRES_PASSWORD"),
 		Database: firstNonEmpty(os.Getenv("POSTGRES_DB"), "windshift"),
 		SSLMode:  postgresSSLMode(),
+		Schema:   postgresSchema(),
 	}
+}
+
+// postgresSchema resolves POSTGRES_SCHEMA, the schema Spark keeps its tables in.
+// Empty keeps the server default ("public"). Invalid names are fatal for the same
+// reason as POSTGRES_SSLMODE: better a clear startup error than a wrong schema.
+// Deployments using POSTGRES_CONNECTION_STRING set search_path in the URL instead.
+func postgresSchema() string {
+	schema := strings.TrimSpace(os.Getenv("POSTGRES_SCHEMA"))
+	if schema == "" {
+		return ""
+	}
+	if err := database.ValidatePostgresSchemaName(schema); err != nil {
+		slog.Error("FATAL: invalid POSTGRES_SCHEMA", "error", err)
+		os.Exit(1)
+	}
+	return schema
 }
 
 // postgresSSLMode resolves POSTGRES_SSLMODE for the split-variable Postgres

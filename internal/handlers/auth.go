@@ -38,6 +38,24 @@ type AuthHandler struct {
 	ipExtractor              *utils.IPExtractor
 	authPolicyHandler        *AuthPolicyHandler
 	adminRateLimiter         *middleware.AdminFallbackRateLimiter
+	ssoLogout                func(http.ResponseWriter, *http.Request)
+}
+
+// SetSSOLogout wires the hook that ends the identity provider session for
+// sessions created through OIDC SSO.
+func (h *AuthHandler) SetSSOLogout(fn func(http.ResponseWriter, *http.Request)) {
+	h.ssoLogout = fn
+}
+
+// logoutResponse ends any identity provider session and builds the logout payload.
+func (h *AuthHandler) logoutResponse(w http.ResponseWriter, r *http.Request) map[string]any {
+	if h.ssoLogout != nil {
+		h.ssoLogout(w, r)
+	}
+	return map[string]any{
+		"success": true,
+		"message": "Logout successful",
+	}
 }
 
 // LoginRequest represents the login request payload
@@ -298,10 +316,7 @@ func (h *AuthHandler) Logout(w http.ResponseWriter, r *http.Request) {
 	token, err := h.sessionManager.GetSessionFromRequest(r)
 	if err != nil {
 		h.sessionManager.ClearSessionCookie(w, r)
-		respondJSONOK(w, map[string]any{
-			"success": true,
-			"message": "Logout successful",
-		})
+		respondJSONOK(w, h.logoutResponse(w, r))
 		return
 	}
 
@@ -317,10 +332,7 @@ func (h *AuthHandler) Logout(w http.ResponseWriter, r *http.Request) {
 		h.auditor.Log(r, &models.User{ID: session.UserID}, logger.ActionLogout, logger.ResourceUser, nil, "")
 	}
 
-	respondJSONOK(w, map[string]any{
-		"success": true,
-		"message": "Logout successful",
-	})
+	respondJSONOK(w, h.logoutResponse(w, r))
 }
 
 // GetCurrentUser returns information about the currently authenticated user
