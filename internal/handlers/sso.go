@@ -543,6 +543,7 @@ func (h *SSOHandler) Callback(w http.ResponseWriter, r *http.Request) {
 			h.redirectWithError(w, r, "Failed to set session")
 			return
 		}
+		h.setLogoutHint(w, r, provider.Slug, tokens.RefreshToken, rememberMe)
 		slog.Debug("session cookie set, redirecting", slog.String("component", "sso"))
 
 		// storedRedirectURI is validated above by isValidRedirectURI (relative path only).

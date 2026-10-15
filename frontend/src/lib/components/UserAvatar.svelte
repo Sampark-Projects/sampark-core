@@ -30,7 +30,9 @@
 
   async function handleLogout() {
     await authStore.logout();
-    // The App.svelte reactive statement will handle showing the login dialog
+    // Return to the root so the next login lands on the dashboard rather than
+    // the page the previous user was on. App.svelte shows the login dialog.
+    navigate('/');
   }
 
   function handleProfileClick() {
